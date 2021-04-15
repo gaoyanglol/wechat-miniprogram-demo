@@ -1,0 +1,26 @@
+<view class="container">
+  <view class="tabbar">
+    <view class="tab"><text data-num="1" class="{{_num==1?'selected':''}}" bindtap="changeTab">检测项目</text></view>
+    <view class="tab"><text data-num="2" class="{{_num==2?'selected':''}}" bindtap="changeTab">历史记录</text></view>
+  </view>
+  <view class="content">
+    <view class="nav">
+      <view class="nav-item">
+        <view class="item-name"><text>血糖水平指标</text></view>
+        <view class="item-sub"><text>空腹及早、中、晚餐后2h血糖</text></view>
+        <view class="item-sub" style="font-weight:400">
+          <image src="/image/clock.png"></image><text space="nbsp"> 约3分钟  </text>  
+          <image src="/image/edit.png"></image><text space="nbsp"> 共4题</text>
+        </view>
+      </view>
+      <view class="nav-item">
+        <view class="item-name"><text>糖脂代谢指标</text></view>
+        <view class="item-sub"><text>GLU、TC、TG、HDL-C及LDL-C</text></view>
+        <view class="item-sub">
+          <image src="/image/clock.png"></image><text space="nbsp"> 约3分钟  </text>  
+          <image src="/image/edit.png"></image><text space="nbsp"> 共5题</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

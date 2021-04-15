@@ -1,0 +1,34 @@
+<view class="container">
+  <view class="tabbar">
+    <view class="tab"><text data-num="1" class="{{_num==1?'selected':''}}" bindtap="changeTab">检测项目</text></view>
+    <view class="tab"><text data-num="2" class="{{_num==2?'selected':''}}" bindtap="changeTab">历史记录</text></view>
+  </view>
+  <view class="content">
+    <view class="nav">
+      <view class="nav-item" data-form="1" bindtap="goForm">
+        <view class="item-name"><text>疼痛视觉模拟评分[VAS]</text></view>
+        <view class="item-sub"><text>表达您的疼痛程度</text></view>
+        <view class="item-sub">
+          <image src="/image/clock.png"></image><text space="nbsp"> 约1分钟  </text>  
+          <image src="/image/edit.png"></image><text space="nbsp"> 共1题</text>
+        </view>
+      </view>
+      <view class="nav-item" data-form="2" bindtap="goForm">
+        <view class="item-name"><text>咳嗽生命质量问卷[LCQ]</text></view>
+        <view class="item-sub"><text>评估咳嗽对您生命质量的影响</text></view>
+        <view class="item-sub">
+          <image src="/image/clock.png"></image><text space="nbsp"> 约5分钟  </text>  
+          <image src="/image/edit.png"></image><text space="nbsp"> 共19题</text>
+        </view>
+      </view>
+      <view class="nav-item" data-form="3" bindtap="goForm">
+        <view class="item-name"><text>EORTC生活质量调查问卷</text></view>
+        <view class="item-sub"><text>了解您的健康状况</text></view>
+        <view class="item-sub">
+          <image src="/image/clock.png"></image><text space="nbsp"> 约7分钟  </text>  
+          <image src="/image/edit.png"></image><text space="nbsp"> 共30题</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

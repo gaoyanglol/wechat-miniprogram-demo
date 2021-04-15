@@ -1,0 +1,15 @@
+<view class="container">
+  <text style="line-height: 3.5; display: block">第1题·共1题</text>
+  <view class="content">
+    <image src="/image/vas_card.png" data-src="/image/vas_card.png" mode="widthFix" bindtap="preview" style="width: 100%"></image>
+    <text>点击图片可放大</text>
+    <view class="question">
+      <text>横线的一端为0，表示无痛；另一端为10，表示剧痛；中间部分表示不同程度的疼痛。\n请您根据自我感觉选择相应的疼痛程度。</text>
+    </view>
+    <view class="answer">
+      <view class="options {{item.selected}}" wx:for="{{items}}" wx:key="{{item.value}}" value="{{item.value}}" bindtap="changeTab">
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+</view>

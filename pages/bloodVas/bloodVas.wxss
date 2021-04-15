@@ -1,0 +1,44 @@
+/* pages/bloodVas/bloodVas.wxss */
+.container {
+  height: 100vh;
+  background: #f8f8f8;
+  text-align: center;
+  font-size: 14px;
+  color: #8d8d8d;
+}
+.content {
+  width: 638.88rpx;
+  background: #fff;
+  margin: auto;
+  padding: 40rpx;
+  box-sizing: border-box;
+  border-radius: 16.9rpx;
+}
+.question {
+  text-align: left;
+  font-size: 15px;
+  color: #000;
+  margin-top: 25rpx;
+}
+.answer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50rpx;
+  position: relative;
+  justify-content: space-between;
+}
+.options {
+  width: 90rpx;
+  height: 75rpx;
+  border-radius: 10rpx;
+  background: #f8f8f8;
+  margin: 15rpx 5rpx;
+  line-height: 75rpx;
+  font-weight: 600;
+  color: #000;
+  font-size: 16px;
+}
+.options.selected {
+  background: #00c7d6;
+  color: #fff;
+}

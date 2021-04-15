@@ -1,0 +1,70 @@
+/* pages/blood/blood.wxss */
+.container {
+  height: 100vh;
+  background: #f8f8f8;
+}
+.tabbar {
+  background: #fff;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  border-bottom: 1px solid #f8f8f8
+}
+.content {
+  overflow: hidden;
+}
+.tab {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  vertical-align: top;
+}
+.tab text {
+  display: inline-block;
+  line-height: 78rpx;
+  font-size: 16px;
+  position: relative;
+}
+
+.tab text.selected {
+  font-size: 17px;
+  font-weight: bold;
+  color: #00c7d6;
+}
+.tab text.selected::after{
+  content: "";
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 25px;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  background: #00c7d6;
+  border-radius: 1px
+}
+.nav {
+  width: 688.88rpx; 
+  margin: 124rpx auto;
+}
+.nav-item {
+  background: #fff;
+  padding: 35rpx;
+  height: 140rpx;
+  border-radius: 16.9rpx;
+  margin-bottom: 24rpx;
+}
+.item-name {
+  font-size: 20px;
+  font-weight: 500;
+}
+.item-sub {
+  font-size: 12px;
+  color: #8D8D8D;
+  margin-top: 8rpx;
+  font-weight: 500;
+}
+.item-sub image {
+  width: 19rpx;
+  height: 19rpx;
+}
