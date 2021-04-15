@@ -7,9 +7,12 @@
       <text>横线的一端为0，表示无痛；另一端为10，表示剧痛；中间部分表示不同程度的疼痛。\n请您根据自我感觉选择相应的疼痛程度。</text>
     </view>
     <view class="answer">
-      <view class="options {{item.selected}}" wx:for="{{items}}" wx:key="{{item.value}}" value="{{item.value}}" bindtap="changeTab">
+      <view class="options {{item.selected}}" wx:for="{{items}}" data-value="{{item.value}}" bindtap="changeTab">
         <text>{{item.name}}</text>
       </view>
     </view>
+  </view>
+  <view class="btn-area">
+    <button disabled="{{disabled}}">提交</button>
   </view>
 </view>

@@ -2,7 +2,7 @@ Page({
   data: {
     items: [
       {value: '1', name: '1'},
-      {value: '2', name: '2', selected: 'selected'},
+      {value: '2', name: '2'},
       {value: '3', name: '3'},
       {value: '4', name: '4'},
       {value: '5', name: '5'},
@@ -11,7 +11,9 @@ Page({
       {value: '8', name: '8'},
       {value: '9', name: '9'},
       {value: '10', name: '10'},
-    ]
+    ],
+    chosenNum : "",
+    disabled: true
   },
   preview: function(event) {
     console.log(event.currentTarget.dataset.src)
@@ -22,7 +24,20 @@ Page({
     })
   },
   changeTab: function(event) {
-    console.log(event)
+    const arr = this.data.items
+    for (let i = 0; i < arr.length; ++i) {
+      if (arr[i].value === event.currentTarget.dataset.value) {
+        arr[i].selected = "selected"
+        this.data.chosenNum = arr[i].value
+      } else {
+        arr[i].selected = ""
+      }
+    }
+    this.data.disabled = false
+    this.setData({
+      items: arr,
+      chosenNum: this.data.chosenNum,
+      disabled: this.data.disabled
+    })
   }
-
 })

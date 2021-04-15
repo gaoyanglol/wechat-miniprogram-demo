@@ -17,6 +17,12 @@ Page({
         wx.navigateTo({
           url: '/pages/bloodVas/bloodVas',
         })
+        break
+      case "2":
+        wx.navigateTo({
+          url: '/pages/bloodLcq/bloodLcq',
+        })
+        break
     }
   }
 })

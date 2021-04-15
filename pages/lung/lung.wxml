@@ -14,7 +14,7 @@
         </view>
       </view>
       <view class="nav-item" data-form="2" bindtap="goForm">
-        <view class="item-name"><text>咳嗽生命质量问卷[LCQ]</text></view>
+        <view class="item-name"><text>莱塞斯特咳嗽生命质量问卷</text></view>
         <view class="item-sub"><text>评估咳嗽对您生命质量的影响</text></view>
         <view class="item-sub">
           <image src="/image/clock.png"></image><text space="nbsp"> 约5分钟  </text>  

@@ -6,7 +6,8 @@
     "pages/me/me",
     "pages/blood/blood",
     "pages/lung/lung",
-    "pages/bloodVas/bloodVas"
+    "pages/bloodVas/bloodVas",
+    "pages/bloodLcq/bloodLcq"
   ],
   "window": {
     "navigationStyle": "default"

@@ -1,0 +1,23 @@
+<view class="container">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="items" wx:key="item.value">
+      <swiper-item>
+        <text style="line-height: 3.5; display: block">第1题·共1题</text>
+        <view class="content">
+          <view class="question">
+            <text>{{items.question}}</text>
+          </view>
+          <!-- <view class="answer">
+            <view class="options" wx:for="{{item.answers}}" bindtap="changeTab">
+              <text>{{item}}</text>
+            </view>
+          </view> -->
+        </view>   
+       
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="btn-area">
+    <button disabled="{{disabled}}">提交</button>
+  </view>
+</view>
