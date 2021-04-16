@@ -6,6 +6,9 @@
   font-size: 14px;
   color: #8d8d8d;
 }
+.swiper {
+  height: 100%;
+}
 .content {
   width: 638.88rpx;
   background: #fff;
@@ -21,22 +24,19 @@
   margin-top: 25rpx;
 }
 .answer {
-  display: flex;
-  flex-wrap: wrap;
   margin-top: 50rpx;
   position: relative;
-  justify-content: space-between;
 }
 .options {
-  width: 90rpx;
-  height: 75rpx;
   border-radius: 10rpx;
   background: #f8f8f8;
-  margin: 15rpx 5rpx;
-  line-height: 75rpx;
+  margin: 25rpx 5rpx;
+  padding: 5rpx 40rpx;
+  line-height: 65rpx;
   font-weight: 600;
   color: #000;
-  font-size: 16px;
+  font-size: 15px;
+  text-align: left;
 }
 .options.selected {
   background: #00c7d6;

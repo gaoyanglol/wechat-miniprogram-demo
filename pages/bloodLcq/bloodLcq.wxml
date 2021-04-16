@@ -1,19 +1,20 @@
 <view class="container">
-  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-    <block wx:for="items" wx:key="item.value">
+  <swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="changeQuest">
+    <block wx:for="{{items}}" wx:key="{{item.value}}">
       <swiper-item>
-        <text style="line-height: 3.5; display: block">第1题·共1题</text>
+        <text style="line-height: 3.5; display: block">第{{current}}题·共19题</text>
         <view class="content">
           <view class="question">
-            <text>{{items.question}}</text>
+            <text>{{item.question}}</text>
           </view>
-          <!-- <view class="answer">
-            <view class="options" wx:for="{{item.answers}}" bindtap="changeTab">
-              <text>{{item}}</text>
+          <view class="answer">
+            <view wx:for="{{item.answer}}" wx:key="{{item.value}}" data-value="{{item.value}}" bindtap="changeTab">
+              <view class="options {{item.selected}}">
+                <text>{{item.title}}.{{item.name}}</text>
+              </view>
             </view>
-          </view> -->
+          </view>
         </view>   
-       
       </swiper-item>
     </block>
   </swiper>
