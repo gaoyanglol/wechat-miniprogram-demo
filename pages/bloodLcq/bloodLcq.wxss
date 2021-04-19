@@ -44,13 +44,15 @@
 }
 .btn-area {
   position: absolute;
-  bottom: 50rpx;
+  bottom: 70rpx;
   left: 50%;
   transform: translateX(-50%);
   width: 638.88rpx;
   margin: auto;
 }
 .btn-area button{
+  float: right;
+  width: 55%;
   background: #00c7d6;
   color: #fff;
   border-radius: 16.9rpx;
@@ -62,4 +64,7 @@
 }
 .btn-area button::after {
   border: none
+}
+.btn-area button.button-hover {
+  background:#8ae3ea;
 }
