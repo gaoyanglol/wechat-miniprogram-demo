@@ -22,15 +22,15 @@
     </view>
     <view class="wxinput">
       <view class="inputbg">
-        <image style="width: 18px; height: 18px; margin: 10px" src="/image/search.png"></image>
+        <image style="width: 32.61rpx; height: 32.61rpx; margin: 18.12rpx" src="/image/search.png"></image>
         <input type="text" placeholder="搜索监测项目/记录/医生..."></input>
       </view>
     </view>
     <view class="page-section page-section-spacing swiper">
-      <swiper style="height:unset;position: absolute; left:0 ;right:0;top:0;bottom:0;box-shadow: 0 1px 7px rgba(0,0,0, .2);border-radius:11px;overflow:hidden" indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <swiper style="height:275.0422rpx; border-radius:16.91rpx; box-shadow: 0 1px 7px rgba(0,0,0, .2); " indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
           <block wx:for="{{imgUrl}}" wx:key="*this">
           <swiper-item>
-            <image style="width: 100%; height: 100%;border-radius: 11px" src="{{item}}"></image>
+            <image style="width: 100%; border-radius:16.91rpx;" mode="widthFix" src="{{item}}"></image>
           </swiper-item>
         </block>
       </swiper>
@@ -49,7 +49,7 @@
       </view>
     </view>
     <view class="banner">
-      <image src="../../image/banner.png" alt="" style="width: 100%; height:100%; border-radius: 11px;box-shadow: 0 1px 7px rgba(0,0,0, .2)"></image>
+      <image src="../../image/banner.png" alt="" style="width: 100%; height:100%; border-radius: 16.91rpx;box-shadow: 0 1px 7px rgba(0,0,0, .2)"></image>
     </view>
     <view class="sub-title">
       <text>监测记录</text>

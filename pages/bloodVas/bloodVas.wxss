@@ -44,7 +44,7 @@
 }
 .btn-area {
   position: absolute;
-  bottom: 50rpx;
+  bottom: 70rpx;
   left: 50%;
   transform: translateX(-50%);
   width: 638.88rpx;

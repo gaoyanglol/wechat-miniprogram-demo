@@ -27,15 +27,15 @@ Component({
     },
     fontSize: {
       type: Number,
-      value: 20
+      value: 36.23
     },
     iconHeight: {
       type: Number,
-      value: 28
+      value: 50.72
     },
     iconWidth: {
       type: Number,
-      value: 28
+      value: 50.72
     }
   },
   attached: function () {
@@ -81,11 +81,11 @@ Component({
       ].join(';');
       textStyle = [
         'color:' + that.data.color,
-        'font-size:' + that.data.fontSize + 'px'
+        'font-size:' + that.data.fontSize + 'rpx'
       ].join(';');
       iconStyle = [
-        'width: ' + that.data.iconWidth + 'px',
-        'height: ' + that.data.iconHeight + 'px'
+        'width: ' + that.data.iconWidth + 'rpx',
+        'height: ' + that.data.iconHeight + 'rpx'
       ].join(';');
       that.setData({
         containerStyle: containerStyle,
