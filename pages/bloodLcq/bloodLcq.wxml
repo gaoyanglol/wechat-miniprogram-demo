@@ -20,6 +20,6 @@
   </swiper>
   <view class="btn-area">
     <button style="display:{{previous}};background: #fff; color: #00c7d6; width: 40%; float: left" bindtap="goBack">上一题</button>
-    <button hover-class="button-hover" disabled="{{disabled}}" style="display:{{submit}}">提交</button>
+    <button hover-class="button-hover" disabled="{{disabled}}" style="display:{{submit}}" bindtap="submitData">提交</button>
   </view>
 </view>

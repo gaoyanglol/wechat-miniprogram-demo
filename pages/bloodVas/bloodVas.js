@@ -24,7 +24,7 @@ Page({
     })
   },
   changeTab: function(event) {
-    const arr = this.data.items
+    let arr = this.data.items
     for (let i = 0; i < arr.length; ++i) {
       if (arr[i].value === event.currentTarget.dataset.value) {
         arr[i].selected = "selected"

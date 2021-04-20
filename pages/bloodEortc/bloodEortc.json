@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "navigationStyle": "default",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "EORTC生活质量调查问卷",
+  "backgroundColor": "#f9f9f8"
+}

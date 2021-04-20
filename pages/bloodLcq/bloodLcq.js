@@ -275,15 +275,15 @@ Page({
       },
     ],
     previous: "none",
-    submit: "none"
+    submit: "none",
+    disabled: true,
+    sum: []
   },
   stopTouchMove: function() {
     return false;
   },
   changeQuest: function(event) {
-    // this.setData({
-    //   current : event.detail.current + 1
-    // })
+
     if (this.data.current === 18) {
       this.setData({
         submit: "block"
@@ -304,8 +304,11 @@ Page({
     }
   },
   changeTab: function(event) {
-    const currentItem = this.data.items[this.data.current]
-    const answers = currentItem.answer
+    let currentItem = this.data.items[this.data.current]
+    let answers = currentItem.answer
+    let items = this.data.items
+    let chosen = []
+
     for(let i = 0; i < answers.length; i++) {
       if (answers[i].value === event.currentTarget.dataset.value) {
         answers[i].selected = "selected"
@@ -318,11 +321,29 @@ Page({
       items: this.data.items,
       current: this.data.current < 18 ? this.data.current+1 : 18
     })
+
+    // 判断答题是否完成改变提交按键状态
+    for(let i = 0; i < items.length; i++) {
+      chosen.push(items[i].chosen)
+    }
+    if(!chosen.includes("")) {
+      this.setData({
+        disabled: false,
+        sum: chosen
+      })
+    }
+    
   },
   goBack: function(event) {
     this.setData({
       current: this.data.current - 1,
       items: this.data.items
+    })
+  },
+  submitData: function(event) {
+    let res = JSON.stringify(this.data.sum)
+    wx.redirectTo({
+      url: '/pages/bloodLcq/lcqResult/lcqResult?res=' + res,
     })
   }
 })

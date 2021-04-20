@@ -7,7 +7,9 @@
     "pages/blood/blood",
     "pages/lung/lung",
     "pages/bloodVas/bloodVas",
-    "pages/bloodLcq/bloodLcq"
+    "pages/bloodLcq/bloodLcq",
+    "pages/bloodLcq/lcqResult/lcqResult",
+    "pages/bloodEortc/bloodEortc"
   ],
   "window": {
     "navigationStyle": "default"
