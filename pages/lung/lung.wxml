@@ -6,7 +6,7 @@
   <view class="content">
     <view class="nav">
       <view class="nav-item" data-form="1" bindtap="goForm">
-        <view class="item-name"><text>疼痛视觉模拟评分[VAS]</text></view>
+        <view class="item-name"><text>VAS疼痛视觉模拟评分</text></view>
         <view class="item-sub"><text>表达您的疼痛程度</text></view>
         <view class="item-sub">
           <image src="/image/clock.png"></image><text space="nbsp"> 约1分钟  </text>  

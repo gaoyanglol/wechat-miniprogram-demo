@@ -1,0 +1,25 @@
+<view class="container">
+  <swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" current="{{current}}" bindchange="changeQuest">
+    <block wx:for="{{items}}" wx:key="{{item.value}}">
+      <swiper-item catchtouchmove="stopTouchMove"> 
+        <text style="line-height: 3.5; display: block">第{{current+1}}题·共30题</text>
+        <view class="content">
+          <view class="question">
+            <text>{{item.question}}</text>
+          </view>
+          <view class="answer" data-value="{{item.value}}">
+            <view wx:for="{{item.answer}}" wx:key="{{item.value}}" data-value="{{item.value}}" bindtap="changeTab">
+              <view class="options {{item.selected}}">
+                <text>{{item.name}}</text>
+              </view>
+            </view>
+          </view>
+        </view>   
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="btn-area">
+    <button style="display:{{previous}};background: #fff; color: #00c7d6; width: 40%; float: left" bindtap="goBack">上一题</button>
+    <button hover-class="button-hover" disabled="{{disabled}}" style="display:{{submit}}" bindtap="submitData">提交</button>
+  </view>
+</view>
