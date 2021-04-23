@@ -3,7 +3,7 @@
   height: 100vh;
   background: #f8f8f8;
   text-align: center;
-  font-size: 14px;
+  font-size: 25.36rpx;
   color: #8d8d8d;
 }
 .swiper {
@@ -19,7 +19,7 @@
 }
 .question {
   text-align: left;
-  font-size: 15px;
+  font-size: 27.17rpx;
   color: #000;
   margin-top: 25rpx;
 }
@@ -35,7 +35,7 @@
   line-height: 65rpx;
   font-weight: 600;
   color: #000;
-  font-size: 15px;
+  font-size: 27.17rpx;
   text-align: left;
 }
 .options.selected {
@@ -57,6 +57,7 @@
   color: #fff;
   border-radius: 16.9rpx;
   line-height: 2.8;
+  font-size: 32.6rpx
 }
 .btn-area button[disabled]:not([type]){
   color: #fff;

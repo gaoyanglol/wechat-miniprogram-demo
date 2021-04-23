@@ -411,10 +411,9 @@ Page({
     })
   },
   submitData: function(event) {
-    console.log(this.data.sum)
-    // let res = JSON.stringify(this.data.sum)
-    // wx.redirectTo({
-    //   url: '/pages/bloodLcq/lcqResult/lcqResult?res=' + res,
-    // })
+    let res = JSON.stringify(this.data.sum)
+    wx.redirectTo({
+      url: '/pages/bloodEortc/eortcResult/eortcResult?res=' + res,
+    })
   }
 })

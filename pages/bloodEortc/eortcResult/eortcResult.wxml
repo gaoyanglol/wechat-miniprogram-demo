@@ -1,0 +1,68 @@
+<view class="container">
+  <view class="content">
+    <view class="item">
+      <text class="item-name">躯体功能</text>
+      <text class="item-score">{{pf}}</text>
+    </view>
+    <view class="item">
+      <text class="item-name">角色功能</text>
+      <text class="item-score">{{rf}}</text>
+    </view>
+    <view class="item">
+      <text class="item-name">情绪功能</text>
+      <text class="item-score">{{ef}}</text>
+    </view>
+    <view class="item">
+      <text class="item-name">认知功能</text>
+      <text class="item-score">{{cf}}</text>
+    </view>
+    <view class="item">
+      <text class="item-name">社会功能</text>
+      <text class="item-score">{{sf}}</text>
+    </view>
+    <view class="item">
+      <text class="item-name">总健康状况</text>
+      <text class="item-score">{{ql}}</text>
+    </view>
+    <view class="item">
+      <text class="item-name">疲倦</text>
+      <text class="item-score">{{fa}}</text>
+    </view>
+    <view class="item">
+      <text class="item-name">恶心与呕吐</text>
+      <text class="item-score">{{nv}}</text>
+    </view>
+    <view class="item">
+      <text class="item-name">疼痛</text>
+      <text class="item-score">{{pa}}</text>
+    </view>
+    <view class="item">
+      <text class="item-name">气促</text>
+      <text class="item-score">{{dy}}</text>
+    </view>
+    <view class="item">
+      <text class="item-name">失眠</text>
+      <text class="item-score">{{sl}}</text>
+    </view>
+    <view class="item">
+      <text class="item-name">食欲丧失</text>
+      <text class="item-score">{{ap}}</text>
+    </view>
+    <view class="item">
+      <text class="item-name">便秘</text>
+      <text class="item-score">{{co}}</text>
+    </view>
+    <view class="item">
+      <text class="item-name">腹泻</text>
+      <text class="item-score">{{di}}</text>
+    </view>
+    <view class="item">
+      <text class="item-name">经济困难</text>
+      <text class="item-score">{{fi}}</text>
+    </view>
+  </view>
+
+  <view class="btn-area">
+    <button hover-class="button-hover" bindtap="submitData">上传</button>
+  </view>
+</view>

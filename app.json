@@ -9,7 +9,8 @@
     "pages/bloodVas/bloodVas",
     "pages/bloodLcq/bloodLcq",
     "pages/bloodLcq/lcqResult/lcqResult",
-    "pages/bloodEortc/bloodEortc"
+    "pages/bloodEortc/bloodEortc",
+    "pages/bloodEortc/eortcResult/eortcResult"
   ],
   "window": {
     "navigationStyle": "default"
