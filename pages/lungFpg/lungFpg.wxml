@@ -1,0 +1,27 @@
+<view class="container">
+  <view style="display: flex; align-items: center; width: 638.88rpx; margin: auto; height: 120rpx; text-align: left">
+    <text>请您测量并记录每天的空腹血糖（FPG）及早、中、晚餐后2h血糖，并于当日0点前统一填写上传。</text>
+  </view>
+  <view class="content">
+    <view class="item">
+      <text class="item-name">空腹血糖</text>
+      <input class="item-ipt" type="digit" placeholder="mmol/L" placeholder-class="placeholder" />
+    </view>
+    <view class="item">
+      <text class="item-name">早餐后2小时</text>
+      <input class="item-ipt" type="digit" placeholder="mmol/L" placeholder-class="placeholder" />
+    </view>
+    <view class="item">
+      <text class="item-name">午餐后2小时</text>
+      <input class="item-ipt" type="digit" placeholder="mmol/L" placeholder-class="placeholder" />
+    </view>
+    <view class="item">
+      <text class="item-name">晚餐后2小时</text>
+      <input class="item-ipt" type="digit" placeholder="mmol/L" placeholder-class="placeholder" />
+    </view>
+  </view>
+
+  <view class="btn-area">
+    <button hover-class="button-hover" bindtap="submitData">上传</button>
+  </view>
+</view>

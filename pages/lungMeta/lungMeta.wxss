@@ -1,0 +1,74 @@
+.container {
+  min-height: 100vh;
+  background: #f8f8f8;
+  text-align: center;
+  font-size: 25.36rpx;
+  color: #8d8d8d;
+  overflow: hidden;
+  position: relative;
+}
+.content {
+  width: 638.88rpx;
+  background: #fff;
+  margin: 0 auto 230rpx;
+  padding: 40rpx;
+  box-sizing: border-box;
+  border-radius: 16.9rpx;
+  font-size: 28.98rpx;
+  color: #000;
+}
+.item {
+  display: flex;
+  height: 63.4rpx;
+  justify-content: space-between;
+  line-height: 63.4rpx;
+  margin-bottom: 25rpx;
+}
+
+.item-name {
+  color: #8d8d8d;
+}
+.item-ipt {
+  height: 100%;
+  width: 430rpx;
+  font-weight: bold;
+  font-size: 28.98rpx;
+  color: #000;
+  line-height: 2.5;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f8f8f8;
+  text-align: left;
+}
+.item:last-child .item-ipt {
+  border-bottom: 0;
+}
+.placeholder {
+  color: #ccc;
+  font-weight: normal;
+}
+.btn-area {
+  position: absolute;
+  bottom: 70rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 638.88rpx;
+  margin: auto;
+}
+.btn-area button{
+  width: 100%;
+  background: #00c7d6;
+  color: #fff;
+  border-radius: 16.9rpx;
+  line-height: 2.8;
+  font-size: 32.6rpx
+}
+.btn-area button[disabled]:not([type]){
+  color: #fff;
+  background: #8ae3ea;
+}
+.btn-area button::after {
+  border: none
+}
+.btn-area button.button-hover {
+  background:#8ae3ea;
+}

@@ -1,0 +1,31 @@
+<view class="container">
+  <view style="display: flex; align-items: center; width: 638.88rpx; margin: auto; height: 120rpx; text-align: left">
+    
+  </view>
+  <view class="content">
+    <view class="item">
+      <text class="item-name">GLU</text>
+      <input class="item-ipt" type="digit" placeholder="血清葡萄糖" placeholder-class="placeholder" />
+    </view>
+    <view class="item">
+      <text class="item-name">TC</text>
+      <input class="item-ipt" type="digit" placeholder="总胆固醇" placeholder-class="placeholder" />
+    </view>
+    <view class="item">
+      <text class="item-name">TG</text>
+      <input class="item-ipt" type="digit" placeholder="甘油三酯" placeholder-class="placeholder" />
+    </view>
+    <view class="item">
+      <text class="item-name">HDL-C</text>
+      <input class="item-ipt" type="digit" placeholder="高密度脂蛋白胆固醇" placeholder-class="placeholder" />
+    </view>
+    <view class="item">
+      <text class="item-name">LDL-C</text>
+      <input class="item-ipt" type="digit" placeholder="低密度脂蛋白胆固醇" placeholder-class="placeholder" />
+    </view>
+  </view>
+
+  <view class="btn-area">
+    <button hover-class="button-hover" bindtap="submitData">上传</button>
+  </view>
+</view>

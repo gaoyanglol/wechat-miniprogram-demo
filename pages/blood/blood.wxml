@@ -5,7 +5,7 @@
   </view>
   <view class="content">
     <view class="nav">
-      <view class="nav-item">
+      <view class="nav-item" data-form="1" bindtap="goForm">
         <view class="item-name"><text>血糖水平指标</text></view>
         <view class="item-sub"><text>空腹及早、中、晚餐后2h血糖</text></view>
         <view class="item-sub" style="font-weight:400">
@@ -13,7 +13,7 @@
           <image src="/image/edit.png"></image><text space="nbsp"> 共4题</text>
         </view>
       </view>
-      <view class="nav-item">
+      <view class="nav-item" data-form="2" bindtap="goForm">
         <view class="item-name"><text>糖脂代谢指标</text></view>
         <view class="item-sub"><text>GLU、TC、TG、HDL-C及LDL-C</text></view>
         <view class="item-sub">

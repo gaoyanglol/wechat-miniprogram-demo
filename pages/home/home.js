@@ -104,15 +104,13 @@ Component({
       this.triggerEvent('home', {});
     },
     goBlood(event) {
-      console.log("点击获取的数据", event)
       wx.navigateTo({
-        url: '/pages/blood/blood?id=' + "123",
+        url: '/pages/blood/blood'
       })
     },
     goLung(event) {
-      console.log("点击获取的数据", event)
       wx.navigateTo({
-        url: '/pages/lung/lung?id=' + '123'
+        url: '/pages/lung/lung'
       })
     }
   },

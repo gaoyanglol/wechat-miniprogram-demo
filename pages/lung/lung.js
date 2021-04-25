@@ -2,11 +2,8 @@ Page({
   data: {
     _num : 1
   },
-  onLoad(options) {
-    console.log("接收的id",options)
-  },
+
   changeTab: function(event) {
-    console.log(event)
     this.setData({
       _num: event.target.dataset.num
     })

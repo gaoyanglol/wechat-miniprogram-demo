@@ -1,7 +1,5 @@
 Page({
-  onLoad(options) {
-    console.log("接收的id",options)
-  },
+
   data: {
     _num : 1
   },
@@ -9,5 +7,19 @@ Page({
     this.setData({
       _num: event.target.dataset.num
     })
+  },
+  goForm: function(event) {
+    switch (event.currentTarget.dataset.form) {
+      case "1":
+        wx.navigateTo({
+          url: '/pages/lungFpg/lungFpg',
+        })
+        break
+      case "2":
+        wx.navigateTo({
+          url: '/pages/lungMeta/lungMeta',
+        })
+        break
+    }
   }
 })

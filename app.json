@@ -10,7 +10,9 @@
     "pages/bloodLcq/bloodLcq",
     "pages/bloodLcq/lcqResult/lcqResult",
     "pages/bloodEortc/bloodEortc",
-    "pages/bloodEortc/eortcResult/eortcResult"
+    "pages/bloodEortc/eortcResult/eortcResult",
+    "pages/lungFpg/lungFpg",
+    "pages/lungMeta/lungMeta"
   ],
   "window": {
     "navigationStyle": "default"
