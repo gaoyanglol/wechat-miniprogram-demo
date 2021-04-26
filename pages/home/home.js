@@ -1,4 +1,4 @@
-const DB = wx.cloud.database().collection("list")
+const db = wx.cloud.database()
 Component({
   properties: {
     background: {
@@ -51,7 +51,8 @@ Component({
     interval: 5000,
     duration: 1000,
     indicatorColor: "rgba(255,255,255, .5)",
-    indicatorActiveColor: "rgba(255,255,255, 1)"
+    indicatorActiveColor: "rgba(255,255,255, 1)",
+    record: []
   },
   methods: {
     // 通过获取系统信息计算导航栏高度        
@@ -112,6 +113,17 @@ Component({
       wx.navigateTo({
         url: '/pages/lung/lung'
       })
+    },
+    onLoad: function(options) {
+      let that = this
+     db.collection('list').get({
+        success: function(res) {
+          that.setData({
+            record: res.data
+          })
+        }
+      })
+      console.log(this.data)
     }
   },
   pageLifetimes: {
@@ -126,11 +138,11 @@ Component({
   },
 
   //查询数据
-  getData() {
-    DB.get({
-      success(res) {
-        console.log("查询数据成功", res)
-      }
-    })
-  }
+  // getData() {
+  //   DB.get({
+  //     success(res) {
+  //       console.log("查询数据成功", res)
+  //     }
+  //   })
+  // }
 });

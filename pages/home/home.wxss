@@ -144,3 +144,13 @@
   height: 166.69rpx;
   margin: 47.7rpx auto;
 }
+.records {
+  width: 688.88rpx;
+  height: 115.94rpx;
+  margin: 25rpx auto;
+  padding: 25.96rpx 33.81rpx;
+  box-sizing: border-box;
+  background: #fff;
+  box-shadow: 0 1px 7px rgba(0, 0, 0, .1);
+  border-radius: 16.91rpx;
+}

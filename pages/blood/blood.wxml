@@ -12,6 +12,7 @@
           <image src="/image/clock.png"></image><text space="nbsp"> 约3分钟  </text>  
           <image src="/image/edit.png"></image><text space="nbsp"> 共4题</text>
         </view>
+        <image src="/image/glucose.png" mode="heightFix"></image>
       </view>
       <view class="nav-item" data-form="2" bindtap="goForm">
         <view class="item-name"><text>糖脂代谢指标</text></view>
@@ -20,6 +21,7 @@
           <image src="/image/clock.png"></image><text space="nbsp"> 约3分钟  </text>  
           <image src="/image/edit.png"></image><text space="nbsp"> 共5题</text>
         </view>
+        <image src="/image/meta.png" mode="heightFix"></image>
       </view>
     </view>
   </view>

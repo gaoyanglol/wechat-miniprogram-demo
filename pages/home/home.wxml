@@ -16,7 +16,7 @@
           <image src='{{titleImg}}' style='{{iconStyle}}'></image>
         </view>
         <view class='nav-title' wx:if="{{titleText}}">
-          <text style='{{textStyle}}'>{{titleText}}</text>
+          <!-- <text style='{{textStyle}}'>{{titleText}}</text> -->
         </view>
       </view>
     </view>
@@ -30,7 +30,7 @@
       <swiper style="height:275.0422rpx; border-radius:16.91rpx; box-shadow: 0 1px 7px rgba(0,0,0, .2); " indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
           <block wx:for="{{imgUrl}}" wx:key="*this">
           <swiper-item>
-            <image style="width: 100%; border-radius:16.91rpx;" mode="widthFix" src="{{item}}"></image>
+            <!-- <image style="width: 100%; border-radius:16.91rpx;" mode="widthFix" src="{{item}}"></image> -->
           </swiper-item>
         </block>
       </swiper>
@@ -53,6 +53,9 @@
     </view>
     <view class="sub-title">
       <text>监测记录</text>
+    </view>
+    <view class="records" wx:for="{{record}}">
+      <text>{{item.name}}</text>
     </view>
   </view>
 </view>

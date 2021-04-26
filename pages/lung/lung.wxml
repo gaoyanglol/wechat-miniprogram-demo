@@ -12,14 +12,16 @@
           <image src="/image/clock.png"></image><text space="nbsp"> 约1分钟  </text>  
           <image src="/image/edit.png"></image><text space="nbsp"> 共1题</text>
         </view>
+        <image src="/image/pain.png" mode="heightFix"></image>
       </view>
       <view class="nav-item" data-form="2" bindtap="goForm">
-        <view class="item-name"><text>莱塞斯特咳嗽生命质量问卷</text></view>
+        <view class="item-name"><text>LCQ咳嗽生命质量问卷</text></view>
         <view class="item-sub"><text>评估咳嗽对您生命质量的影响</text></view>
         <view class="item-sub">
           <image src="/image/clock.png"></image><text space="nbsp"> 约5分钟  </text>  
           <image src="/image/edit.png"></image><text space="nbsp"> 共19题</text>
         </view>
+        <image src="/image/cough.png" mode="heightFix"></image>
       </view>
       <view class="nav-item" data-form="3" bindtap="goForm">
         <view class="item-name"><text>EORTC生活质量调查问卷</text></view>
@@ -28,6 +30,7 @@
           <image src="/image/clock.png"></image><text space="nbsp"> 约7分钟  </text>  
           <image src="/image/edit.png"></image><text space="nbsp"> 共30题</text>
         </view>
+        <image src="/image/life.png" mode="heightFix"></image>
       </view>
     </view>
   </view>
