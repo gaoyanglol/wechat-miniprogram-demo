@@ -116,7 +116,9 @@ Component({
     },
     onLoad: function(options) {
       let that = this
-     db.collection('list').get({
+     db.collection('list').where({
+       name: "张三",
+     }).get({
         success: function(res) {
           that.setData({
             record: res.data

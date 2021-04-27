@@ -1,4 +1,7 @@
 /* pages/home/home.wxss */
+.container {
+  padding-bottom: 135rpx;
+}
 .header-bar {
   border-radius: 0 0 35.41rpx 35.41rpx;
   position: absolute;
