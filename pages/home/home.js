@@ -138,13 +138,4 @@ Component({
       }
     }
   },
-
-  //查询数据
-  // getData() {
-  //   DB.get({
-  //     success(res) {
-  //       console.log("查询数据成功", res)
-  //     }
-  //   })
-  // }
 });

@@ -1,10 +1,48 @@
-view {
+.container {
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: #eeeeee;
-  color: #999999;
+}
+.header-bar {
+  border-radius: 0 0 35.41rpx 35.41rpx;
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  z-index: -1;
+  overflow: hidden
+}
+.nav {
+  width: 100vw
+}
+.navbar{
+  position: relative
+}
+
+.nav-title{    
+  position: absolute;    
+  transform: translate(-50%,-50%);    
+  left: 50%;    
+  top: 50%;    
+  font-size: 0;    
+  font-weight: bold;
+}
+.userInfo {
+  width: 670rpx;
+  margin: auto;
+  color: #fff;
+  line-height: 50rpx;
+}
+.userInfo::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  overflow: hidden;
+  float:left;
+  margin-right: 20rpx;
+}
+.nickname {
   font-weight: bold;
 }
