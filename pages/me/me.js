@@ -46,6 +46,13 @@ Component({
     openid: ''
   },
   methods: {
+    onLoad: function() {
+      
+    },
+    getOpenId: function() {
+      let app = getApp()
+      console.log(app.globalData.openid)
+    },
     // 通过获取系统信息计算导航栏高度        
     setNavSize: function () {
       var that = this
@@ -83,20 +90,6 @@ Component({
         containerStyle: containerStyle,
         textStyle: textStyle,
         iconStyle: iconStyle
-      })
-    },
-    getOpenId() {
-      let that = this
-      
-      wx.cloud.callFunction({
-        name: 'getOpenId',
-        complete: res => {
-          console.log('云函数获取到的openID: ', res.result)
-          var openid = res.result.openid
-          that.setData({
-            openid: openid
-          })
-        }
       })
     },
   },

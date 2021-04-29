@@ -133,4 +133,15 @@
   background: #fff;
   box-shadow: 0 1px 7px rgba(0, 0, 0, .1);
   border-radius: 16.91rpx;
+  line-height: 1;
+}
+.record-name {
+  font-size: 26.39rpx;
+  font-weight: 500
+}
+.record-time {
+  font-size: 21.74rpx;
+  color: #8D8D8D;
+  margin-top: 20rpx;
+  font-weight: 500;
 }

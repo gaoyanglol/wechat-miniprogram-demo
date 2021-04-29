@@ -115,18 +115,19 @@ Component({
       })
     },
     onLoad: function(options) {
+      let openid = wx.getStorageSync('openid')
       let that = this
-     db.collection('list').where({
-       name: "张三",
+     db.collection('patient_list').where({
+       _openid: openid,
      }).get({
         success: function(res) {
           that.setData({
-            record: res.data
+            type: res.data[0].type,
+            record: res.data[0].record
           })
         }
       })
-      console.log(this.data)
-    }
+    },
   },
   pageLifetimes: {
     show() {

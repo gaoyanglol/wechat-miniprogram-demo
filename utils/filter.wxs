@@ -1,0 +1,23 @@
+var formatDate = function (datetime, type) {
+  var str = type ? type : "yyyy-MM-dd hh:mm:ss" //默认格式
+  var date = getDate(datetime);
+  var year = date.getFullYear(); //年
+  var month = date.getMonth() + 1 > 10 ? date.getMonth() + 1 : ('0' + (date.getMonth() + 1)); //月
+  var day = date.getDate() > 10 ? date.getDate() : '0' + date.getDate(); //日
+  var hours = date.getHours() > 10 ? date.getHours() : '0' + date.getHours() //时
+  var minutes = date.getMinutes() > 10 ? date.getMinutes() : '0' + date.getHours() //分
+  var seconds = date.getSeconds() > 10 ? date.getSeconds() : '0' + date.getSeconds() //秒
+  // console.log(year,month,day,hours,minutes,seconds)
+  str = str.replace(getRegExp('yyyy', 'g'), year)
+  str = str.replace(getRegExp('MM', 'g'),month)
+  str = str.replace(getRegExp('dd', 'g'),day)
+  str = str.replace(getRegExp('hh', 'g'),hours)
+  str = str.replace(getRegExp('mm', 'g'),minutes)
+  str = str.replace(getRegExp('ss', 'g'),seconds)
+  // console.log(str, 484848)
+  // return [year, month, day].map(formatNumber).join('-');
+  return str
+  }
+  module.exports = {
+  formatDate: formatDate
+  }

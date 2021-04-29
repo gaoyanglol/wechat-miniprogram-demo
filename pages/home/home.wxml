@@ -49,7 +49,10 @@
       <text>监测记录</text>
     </view>
     <view class="records" wx:for="{{record}}">
-      <text>{{item.name}}</text>
+      <view class="record-name" wx:if="{{type == 1}}"><text>血糖、糖脂检测</text></view>
+      <view class="record-name" wx:elif="{{type == 0}}"><text>肺功能监测</text></view>
+      <wxs module="filter" src="../../utils/filter.wxs"></wxs>
+      <view class="record-time"><text>{{filter.formatDate(item.time, "yyyy-MM-dd hh:mm:ss")}}</text></view>
     </view>
   </view>
 </view>

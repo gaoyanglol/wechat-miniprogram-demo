@@ -1,3 +1,5 @@
+const db = wx.cloud.database()
+
 Page({
   data: {
     physical: "7",
@@ -27,12 +29,21 @@ Page({
     totalInt = physicalInt + psychoInt + socialInt;
 
     this.setData({
-      physical: physicalInt.toFixed(2).toString(),
-      psycho: psychoInt.toFixed(2).toString(),
-      social: socialInt.toFixed(2).toString(),
-      total: totalInt.toFixed(2).toString(),
+      physical: physicalInt.toFixed(2),
+      psycho: psychoInt.toFixed(2),
+      social: socialInt.toFixed(2),
+      total: totalInt.toFixed(2),
       res: result
     })
   },
-
+  submitData: function(event) {
+    let openid = wx.getStorageSync('openid')
+    db.collection('list').where({
+      _openid: openid
+    }).get({
+      success: function(res) {
+        console.log(res)
+      }
+    })
+  }
 })
