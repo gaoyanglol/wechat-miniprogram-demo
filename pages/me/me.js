@@ -1,3 +1,4 @@
+const db = wx.cloud.database()
 Component({
   properties: {
     background: {
@@ -50,8 +51,16 @@ Component({
       
     },
     getOpenId: function() {
-      let app = getApp()
-      console.log(app.globalData.openid)
+      let app = getApp().globalData.openid
+      db.collection('patient_list').where({
+        _openid: app
+      }).get({
+        success: function(res) {
+          console.log(res)
+        } , fail: function(err) {
+          console.log(err)
+        }
+      })
     },
     // 通过获取系统信息计算导航栏高度        
     setNavSize: function () {

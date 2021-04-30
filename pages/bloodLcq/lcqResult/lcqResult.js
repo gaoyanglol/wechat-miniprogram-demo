@@ -38,7 +38,7 @@ Page({
   },
   submitData: function(event) {
     let openid = wx.getStorageSync('openid')
-    db.collection('list').where({
+    db.collection('patient_list').where({
       _openid: openid
     }).get({
       success: function(res) {
