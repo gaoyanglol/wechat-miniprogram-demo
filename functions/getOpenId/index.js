@@ -13,5 +13,7 @@ exports.main = async (event, context) => {
     openid: wxContext.OPENID,
     appid: wxContext.APPID,
     unionid: wxContext.UNIONID,
+    // time: new Date(new Date().toLocaleDateString())
+    time: new Date()
   }
 }

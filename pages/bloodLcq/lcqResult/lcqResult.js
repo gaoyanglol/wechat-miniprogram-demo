@@ -1,12 +1,13 @@
 const db = wx.cloud.database()
-
+var util = require('../../../utils/utils.js')
 Page({
   data: {
     physical: "7",
     psycho: "7",
     social: "7",
     total: "7",
-    res: []
+    res: [],
+    serverDate: ""
   },
   onLoad: function (options) {
     let result = JSON.parse(options.res)
@@ -35,15 +36,36 @@ Page({
       total: totalInt.toFixed(2),
       res: result
     })
+
+    console.log(this.data)
   },
   submitData: function(event) {
+    wx.cloud.callFunction({
+      name: 'getOpenId',
+      complete: res => {
+        that.data.serverDate = util.formatTime(util.utc_beijing(res.result.time))
+      }
+    })
+
+    const _ = db.command
+    let that = this
     let openid = wx.getStorageSync('openid')
     db.collection('patient_list').where({
       _openid: openid
-    }).get({
+    }).update({
+      data: {
+        record: _.push({
+          lcq_data: {
+            answer: [that.data.physical, that.data.psycho, that.data.social, that.data.total],
+            score: that.data.res
+          },
+          time: new Date()
+        })
+      },
       success: function(res) {
         console.log(res)
       }
     })
+    console.log(this.data)
   }
 })
