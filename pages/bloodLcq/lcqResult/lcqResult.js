@@ -10,6 +10,13 @@ Page({
     serverDate: ""
   },
   onLoad: function (options) {
+    wx.cloud.callFunction({
+      name: 'getOpenId',
+      complete: res => {
+       console.log(res)
+      }
+    })
+
     let result = JSON.parse(options.res)
     let resInt = []
     let physicalInt
@@ -34,20 +41,13 @@ Page({
       psycho: psychoInt.toFixed(2),
       social: socialInt.toFixed(2),
       total: totalInt.toFixed(2),
-      res: result
+      res: result,
+      serverDate: util.formatTime(new Date())
     })
 
-    console.log(this.data)
   },
   submitData: function(event) {
-    wx.cloud.callFunction({
-      name: 'getOpenId',
-      complete: res => {
-        that.data.serverDate = util.formatTime(util.utc_beijing(res.result.time))
-      }
-    })
-
-    const _ = db.command
+     const _ = db.command
     let that = this
     let openid = wx.getStorageSync('openid')
     db.collection('patient_list').where({
