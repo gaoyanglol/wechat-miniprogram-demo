@@ -1,4 +1,25 @@
 <view class="container">
   <view class="title">新用户注册</view>
-  <input class="ipt" type="text" placeholder-style="color: #aaa" placeholder="请输入您的姓名" />
+  <view class="row">
+    <text class="label">姓名</text>
+    <input class="ipt" type="text" placeholder-style="color: #aaa" placeholder="请输入您的姓名" />
+  </view>
+  <view class="row">
+    <text class="label">年龄</text>
+    <input class="ipt" type="text" placeholder-style="color: #aaa" placeholder="请输入您的年龄" />
+  </view>
+  <view class="row">
+    <text class="label">参与项目</text>
+    <radio-group bindchange="radioChange">
+        <label class="weui-cell weui-check__label">
+          <radio value="1" checked="true"/>
+          <view class="weui-cell__bd">血糖及糖脂</view>
+        </label>
+        <label class="weui-cell weui-check__label">
+          <radio value="0" />
+          <view class="weui-cell__bd">肺功能</view>
+        </label>
+      </radio-group>
+  </view>
+  
 </view>
