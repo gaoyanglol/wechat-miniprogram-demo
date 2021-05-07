@@ -1,0 +1,19 @@
+/* pages/me/register/register.wxss */
+.container {
+  height: 100vh;
+}
+.title {
+  width: 688.88rpx;
+  margin: 30rpx auto 50rpx;
+  font-weight: 500;
+  font-size: 42rpx;
+}
+.ipt {
+  border-bottom: 1px solid #eee;
+  width: 688.88rpx;
+  height: 70rpx;
+  min-height: 70rpx;
+  margin: 30rpx auto;
+  line-height: 70rpx;
+  font-size: 28rpx;
+}

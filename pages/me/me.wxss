@@ -1,12 +1,13 @@
 .container {
   height: 100vh;
+  background: #f8f8f8;
 }
 .header-bar {
   border-radius: 0 0 35.41rpx 35.41rpx;
   position: absolute;
   width: 100vw;
   top: 0;
-  z-index: -1;
+  z-index: 0;
   overflow: hidden
 }
 .nav {
@@ -25,8 +26,9 @@
   font-weight: bold;
 }
 .userInfo {
+  position: relative;
   width: 670rpx;
-  margin: auto;
+  margin: 30rpx auto 0;
   color: #fff;
   line-height: 50rpx;
 }
@@ -45,4 +47,30 @@
 }
 .nickname {
   font-weight: bold;
+}
+.login-area {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 200rpx;
+  width: 688.88rpx;
+  margin: auto;
+}
+.login-area button {
+  width: 100%;
+  background-color: #fff;
+  color: #000;
+  font-size: 32.6rpx;
+  border-radius: 16.9rpx;
+  line-height: 2.8;
+  border: 0;
+  outline: none;
+  padding: 0;
+}
+.login-area button::after {
+  content: "";
+  display: none;
+}
+.login-area button.logout {
+  color: red;
 }

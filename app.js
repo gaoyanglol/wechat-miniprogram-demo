@@ -12,7 +12,6 @@ App({
       name: 'getOpenId',
       complete: res => {
         that.globalData.openid = res.result.openid
-        wx.setStorageSync('openid', res.result.openid)
       }
     })
   },

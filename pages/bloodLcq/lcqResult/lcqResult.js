@@ -10,13 +10,6 @@ Page({
     serverDate: ""
   },
   onLoad: function (options) {
-    wx.cloud.callFunction({
-      name: 'getOpenId',
-      complete: res => {
-       console.log(res)
-      }
-    })
-
     let result = JSON.parse(options.res)
     let resInt = []
     let physicalInt
@@ -42,7 +35,7 @@ Page({
       social: socialInt.toFixed(2),
       total: totalInt.toFixed(2),
       res: result,
-      serverDate: util.formatTime(new Date())
+      // serverDate: util.formatTime(new Date())
     })
 
   },
@@ -57,7 +50,8 @@ Page({
         record: _.push({
           lcq_data: {
             answer: [that.data.physical, that.data.psycho, that.data.social, that.data.total],
-            score: that.data.res
+            score: that.data.res,
+            time: new Date()
           },
           time: new Date()
         })

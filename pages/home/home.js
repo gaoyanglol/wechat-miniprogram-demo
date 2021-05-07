@@ -127,8 +127,7 @@ Component({
           })
         }
       })
-      console.log(this.data)
-    },
+    }
   },
   pageLifetimes: {
     show() {

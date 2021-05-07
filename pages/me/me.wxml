@@ -23,9 +23,10 @@
       </view>
     </view>
 
-    <button type="default" bindtap="getOpenId">获取openid</button>
-    <view>
-      {{openid}}
+    <view class="login-area">
+      <button class="login" wx:if="{{isLogin === 0}}" bindtap="login">登录/注册</button>
+      <button class="logout" wx:elif="{{isLogin === 1}}" bindtap="logout">退出登录</button>
     </view>
+
   </view>
 </view>
