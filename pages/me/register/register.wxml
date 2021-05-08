@@ -1,25 +1,30 @@
 <view class="container">
   <view class="title">新用户注册</view>
-  <view class="row">
+  <view>
+    <view class="row">
     <text class="label">姓名</text>
-    <input class="ipt" type="text" placeholder-style="color: #aaa" placeholder="请输入您的姓名" />
+    <input class="ipt" type="text" placeholder-style="color: #aaa" placeholder="请输入您的姓名" model:value="{{regName}}"/>
   </view>
   <view class="row">
     <text class="label">年龄</text>
-    <input class="ipt" type="text" placeholder-style="color: #aaa" placeholder="请输入您的年龄" />
+    <input class="ipt" type="number" placeholder-style="color: #aaa" placeholder="请输入您的年龄" model:value="{{regAge}}"/>
   </view>
   <view class="row">
     <text class="label">参与项目</text>
-    <radio-group bindchange="radioChange">
-        <label class="weui-cell weui-check__label">
-          <radio value="1" checked="true"/>
-          <view class="weui-cell__bd">血糖及糖脂</view>
+    <radio-group class="radio-group" bindchange="radioChange">
+        <label>
+          <radio value="1" />
+          <text class="weui-cell__bd">血糖及糖脂代谢随访（郑亮）</text>
         </label>
-        <label class="weui-cell weui-check__label">
+        <label>
           <radio value="0" />
-          <view class="weui-cell__bd">肺功能</view>
+          <text class="weui-cell__bd">肺功能随访（蒋妍如）</text>
         </label>
       </radio-group>
   </view>
+  </view>
   
+  <view class="btn-area" bindtap="register">
+    <text>登录</text>
+  </view>
 </view>

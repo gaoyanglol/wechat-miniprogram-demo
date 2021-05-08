@@ -48,3 +48,38 @@
   top: 50%;
   transform: translateY(-50%)
 }
+.radio-group {
+  width: 80%;
+  float: left;
+  position: relative;
+}
+.radio-group radio {
+  transform: scale(.7);
+}
+.radio-group label {
+  display: block;
+  padding-left: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.radio-group::before {
+    content: "";
+    height: 100%;
+    width: 1px;
+    background: #eee;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%)
+}
+.btn-area {
+  width: 688.88rpx;
+  background: #00c7d6;
+  margin: 100rpx auto;
+  color: #fff;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  font-size: 32rpx;
+}

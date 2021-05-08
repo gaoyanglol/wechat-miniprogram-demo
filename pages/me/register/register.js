@@ -1,66 +1,35 @@
-// pages/me/register/register.js
+const db = wx.cloud.database()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
+    regName: "",
+    regAge: "",
+    type: ""
+  },
+  register: function() {
+    let openid = getApp().globalData.openid
+    wx.getUserProfile({
+      desc: '仅获取您的公开信息用于资料显示', 
+      success: (res) => {
+        db.collection('patient_list').add({
+          data: {
+            
+          }
+        })
+        wx.setStorageSync('openid', openid)
+        
+        // wx.navigateTo({
+        //   url: '../../me/me',
+        // })
+
+        console.log(this.data)
+
+      }
+    })
 
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  radioChange: function(e) {
+     this.setData({
+       type: e.detail.value
+     })
   }
 })
