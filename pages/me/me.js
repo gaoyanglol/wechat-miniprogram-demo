@@ -47,8 +47,7 @@ Component({
     isLogin: ""
   },
   methods: {
-    onLoad: function() {
-     
+    onShow: function() {
       let isLogin = wx.getStorageSync('openid')
       if (isLogin) {
         this.setData({
@@ -60,8 +59,15 @@ Component({
         })
       }
     },
+    onLoad: function() {
+
+    },
     // 登录功能
     login: function() {
+      wx.showLoading({
+        title: '加载中',
+      })
+      let that = this
       let openid = getApp().globalData.openid
 
       db.collection('patient_list').add({
@@ -69,34 +75,38 @@ Component({
           _id: openid,
         }
       }).then(res => {
-        this.setData({
+        that.setData({
           registered: false
         })
-        console.log(this.data.registered)
+        console.log(that.data.registered)
       }).catch(res => {
-        this.setData({
+        that.setData({
           registered: true
         })
-        console.log(this.data.registered)
+        console.log(that.data.registered)
       })
 
-      if(this.data.registered) {
-         wx.getUserProfile({
-            desc: '仅获取您的公开信息用于资料显示', 
-            success: (res) => {
-              this.setData({
-                userInfo: res.userInfo,
-                hasUserInfo: true
-              })
-              wx.setStorageSync('openid', openid)
-              this.onLoad()
-            }
-          })
-      } else {
-        wx.navigateTo({
-          url: '../me/register/register',
-        })
-      }
+      setTimeout(function() {
+        wx.hideLoading()
+        if(this.data.registered) {
+          wx.getUserProfile({
+             desc: '仅获取您的公开信息用于资料显示', 
+             success: (res) => {
+               this.setData({
+                 userInfo: res.userInfo,
+                 hasUserInfo: true
+               })
+               wx.setStorageSync('openid', openid)
+               this.onShow()
+             }
+           })
+       } else {
+         wx.navigateTo({
+           url: '../me/register/register',
+         })
+       }
+      }, 1000)
+       
       
     },
 
@@ -109,7 +119,7 @@ Component({
         success (res) {
           if (res.confirm) {
             wx.clearStorageSync()
-            that.onLoad()
+            that.onShow()
           } else if (res.cancel) {
             
           }

@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/me/register/register",
     "pages/me/me",
 
     "pages/home/home",
@@ -14,7 +13,8 @@
     "pages/bloodEortc/bloodEortc",
     "pages/bloodEortc/eortcResult/eortcResult",
     "pages/lungFpg/lungFpg",
-    "pages/lungMeta/lungMeta"
+    "pages/lungMeta/lungMeta",
+    "pages/me/register/register"
   ],
   "window": {
     "navigationStyle": "default"
