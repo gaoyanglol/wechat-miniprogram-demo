@@ -10,10 +10,9 @@ Page({
     wx.getUserProfile({
       desc: '仅获取您的公开信息用于资料显示', 
       success: (res) => {
-        db.collection('patient_list').where({
-          _id: openid
-        }).update({
+        db.collection('patient_list').add({
           data: {
+            _id: openid,
             name: this.data.regName,
             age: this.data.regAge,
             type: this.data.type,
@@ -30,7 +29,7 @@ Page({
               wx.switchTab({
                 url: '../../me/me?isLogin='
               })
-            }, 2000)
+            }, 1000)
             
           }
         })

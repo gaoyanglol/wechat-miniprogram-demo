@@ -1,4 +1,5 @@
 const db = wx.cloud.database()
+const app = getApp()
 Component({
   properties: {
     background: {
@@ -49,6 +50,7 @@ Component({
   methods: {
     onShow: function() {
       let isLogin = wx.getStorageSync('openid')
+
       if (isLogin) {
         this.setData({
           isLogin: 1
@@ -60,56 +62,33 @@ Component({
       }
     },
     onLoad: function() {
-
+      this.setData({
+        isRegistered: wx.getStorageSync('isRegistered')
+      })
+      console.log(this.data)
     },
     // 登录功能
     login: function() {
-      wx.showLoading({
-        title: '加载中',
-      })
-      let that = this
       let openid = getApp().globalData.openid
-
-      db.collection('patient_list').add({
-        data: {
-          _id: openid,
-        }
-      }).then(res => {
-        that.setData({
-          registered: false
-        })
-        console.log(that.data.registered)
-      }).catch(res => {
-        that.setData({
-          registered: true
-        })
-        console.log(that.data.registered)
-      })
-
-      setTimeout(function() {
-        wx.hideLoading()
-        if(this.data.registered) {
-          wx.getUserProfile({
-             desc: '仅获取您的公开信息用于资料显示', 
-             success: (res) => {
-               this.setData({
-                 userInfo: res.userInfo,
-                 hasUserInfo: true
-               })
-               wx.setStorageSync('openid', openid)
-               this.onShow()
-             }
-           })
-       } else {
-         wx.navigateTo({
+        if ( this.data.isRegistered === 0) {
+          wx.navigateTo({
            url: '../me/register/register',
-         })
-       }
-      }, 1000)
-       
+          })
+        } else {
+          wx.getUserProfile({
+            desc: '仅获取您的公开信息用于资料显示', 
+            success: (res) => {
+              this.setData({
+                userInfo: res.userInfo,
+              })
+              wx.setStorageSync('openid', openid)
+              this.onShow()
+            }
+          })
+        }  
       
     },
-
+ 
     // 退出登录
     logout: function() {
       let that = this
@@ -118,7 +97,7 @@ Component({
         content: '确定退出当前登录？',
         success (res) {
           if (res.confirm) {
-            wx.clearStorageSync()
+            wx.clearStorageSync('openid')
             that.onShow()
           } else if (res.cancel) {
             
