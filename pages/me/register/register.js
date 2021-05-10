@@ -20,6 +20,7 @@ Page({
             record: ""
           },
           success(res) {
+            wx.setStorageSync('isRegistered', 1)
             wx.setStorageSync('openid', openid)
             wx.showLoading({
               title: '加载中',
@@ -27,7 +28,7 @@ Page({
             setTimeout(function () {
               wx.hideLoading()
               wx.switchTab({
-                url: '../../me/me?isLogin='
+                url: '../../me/me'
               })
             }, 1000)
             

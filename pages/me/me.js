@@ -62,15 +62,13 @@ Component({
       }
     },
     onLoad: function() {
-      this.setData({
-        isRegistered: wx.getStorageSync('isRegistered')
-      })
-      console.log(this.data)
+    
     },
     // 登录功能
     login: function() {
+      let that = this
       let openid = getApp().globalData.openid
-        if ( this.data.isRegistered === 0) {
+        if ( wx.getStorageSync('isRegistered') === 0) {
           wx.navigateTo({
            url: '../me/register/register',
           })
@@ -78,11 +76,14 @@ Component({
           wx.getUserProfile({
             desc: '仅获取您的公开信息用于资料显示', 
             success: (res) => {
-              this.setData({
-                userInfo: res.userInfo,
+              wx.showLoading({
+                title: '加载中',
               })
-              wx.setStorageSync('openid', openid)
-              this.onShow()
+              setTimeout(function () {
+                wx.hideLoading()
+                wx.setStorageSync('openid', openid)
+                that.onShow()
+              }, 1000)              
             }
           })
         }  
@@ -97,7 +98,7 @@ Component({
         content: '确定退出当前登录？',
         success (res) {
           if (res.confirm) {
-            wx.clearStorageSync('openid')
+            wx.removeStorageSync('openid')
             that.onShow()
           } else if (res.cancel) {
             
