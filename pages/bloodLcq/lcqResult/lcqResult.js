@@ -40,26 +40,32 @@ Page({
 
   },
   submitData: function(event) {
-     const _ = db.command
+    const _ = db.command
     let that = this
     let openid = wx.getStorageSync('openid')
-    db.collection('patient_list').where({
-      _openid: openid
-    }).update({
-      data: {
-        record: _.push({
-          lcq_data: {
-            answer: [that.data.physical, that.data.psycho, that.data.social, that.data.total],
-            score: that.data.res,
-            time: new Date()
-          },
-          time: new Date()
-        })
-      },
-      success: function(res) {
-        console.log(res)
+    db.collection('patient_list').doc(openid).get({
+      success: res => {
+        console.log(res.data.record[res.data.record.length-1].lcq_data)
       }
     })
-    console.log(this.data)
+    // db.collection('patient_list').where({
+    //   _openid: openid
+    // }).update({
+    //   data: {
+    //     record: _.push({
+    //       lcq_data: {
+    //         score: [that.data.physical, that.data.psycho, that.data.social, that.data.total],
+    //         answer: that.data.res
+    //       },
+    //       time: new Date()
+    //     })
+    //   },
+    //   success: res => {
+    //     console.log(res)
+    //   },
+    //   fail: res => {
+    //     console.log(res)
+    //   }
+    // })
   }
 })

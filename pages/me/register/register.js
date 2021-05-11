@@ -17,7 +17,14 @@ Page({
             age: this.data.regAge,
             type: this.data.type,
             gender: res.userInfo.gender,
-            record: ""
+            record: [
+              {
+                lcq_data: {},
+                eortc_data: {},
+                vas_data: {},
+                time: new Date()
+              }
+            ]
           },
           success(res) {
             wx.setStorageSync('isRegistered', 1)

@@ -7,11 +7,11 @@
     "pages/lung/lung",
     "pages/bloodVas/bloodVas",
     "pages/bloodLcq/bloodLcq",
-    "pages/bloodLcq/lcqResult/lcqResult",
     "pages/bloodEortc/bloodEortc",
     "pages/bloodEortc/eortcResult/eortcResult",
     "pages/lungFpg/lungFpg",
     "pages/lungMeta/lungMeta",
+    "pages/bloodLcq/lcqResult/lcqResult",
     "pages/me/me",
     "pages/me/register/register"
   ],

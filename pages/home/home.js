@@ -105,16 +105,50 @@ Component({
       this.triggerEvent('home', {});
     },
     goBlood(event) {
-      wx.navigateTo({
-        url: '/pages/blood/blood'
-      })
+      if(wx.getStorageSync('openid')) {
+        wx.navigateTo({
+          url: '/pages/blood/blood'
+        })
+      } else {
+        wx.showModal({
+          title: '提示',
+          content: '您还未登录，测试结果将仅供查看，不会上传！',
+          success (res) {
+            if (res.confirm) {
+              wx.navigateTo({
+                url: '/pages/blood/blood'
+              })
+            } else if (res.cancel) {
+              
+            }
+          }
+        })
+      }
+      
     },
     goLung(event) {
-      wx.navigateTo({
-        url: '/pages/lung/lung'
-      })
+      if(wx.getStorageSync('openid')) {
+        wx.navigateTo({
+          url: '/pages/lung/lung'
+        })
+      } else {
+        wx.showModal({
+          title: '提示',
+          content: '您还未登录，测试结果将仅供查看，不会上传！',
+          success (res) {
+            if (res.confirm) {
+              wx.navigateTo({
+                url: '/pages/lung/lung'
+              })
+            } else if (res.cancel) {
+              
+            }
+          }
+        })
+      }
+      
     },
-    onLoad: function(options) {
+    onShow: function(options) {
       let openid = wx.getStorageSync('openid')
       let that = this
      db.collection('patient_list').where({

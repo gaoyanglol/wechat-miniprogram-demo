@@ -17,7 +17,6 @@
       <text class="item-score">{{total}}</text>
     </view>
   </view>
-  <view>{{serverDate}}</view>
 
   <view class="btn-area">
     <button hover-class="button-hover" bindtap="submitData">上传</button>
