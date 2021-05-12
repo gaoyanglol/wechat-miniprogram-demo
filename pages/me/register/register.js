@@ -19,9 +19,6 @@ Page({
             gender: res.userInfo.gender,
             record: [
               {
-                lcq_data: {},
-                eortc_data: {},
-                vas_data: {},
                 time: new Date()
               }
             ]

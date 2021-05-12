@@ -10,12 +10,24 @@ Page({
     serverDate: ""
   },
   onLoad: function (options) {
+    let that = this
     let result = JSON.parse(options.res)
     let resInt = []
     let physicalInt
     let psychoInt
     let socialInt
     let totalInt
+    let openid = wx.getStorageSync('openid')
+    const _ = db.command
+    
+    db.collection('patient_list').doc(openid).get({
+      success: res => {
+        that.setData({
+          dataRecord: res
+        })
+      }
+    })
+   
 
     result.forEach(function(item) {
       resInt.push(parseInt(item))
@@ -37,35 +49,10 @@ Page({
       res: result,
       // serverDate: util.formatTime(new Date())
     })
-
+    console.log(this.data)
   },
   submitData: function(event) {
-    const _ = db.command
-    let that = this
-    let openid = wx.getStorageSync('openid')
-    db.collection('patient_list').doc(openid).get({
-      success: res => {
-        console.log(res.data.record[res.data.record.length-1].lcq_data)
-      }
-    })
-    // db.collection('patient_list').where({
-    //   _openid: openid
-    // }).update({
-    //   data: {
-    //     record: _.push({
-    //       lcq_data: {
-    //         score: [that.data.physical, that.data.psycho, that.data.social, that.data.total],
-    //         answer: that.data.res
-    //       },
-    //       time: new Date()
-    //     })
-    //   },
-    //   success: res => {
-    //     console.log(res)
-    //   },
-    //   fail: res => {
-    //     console.log(res)
-    //   }
-    // })
+   
+    
   }
 })
