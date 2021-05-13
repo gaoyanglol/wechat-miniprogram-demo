@@ -1,4 +1,7 @@
 const db = wx.cloud.database()
+var util = require('../../utils/utils.js');
+const { formatTime } = require('../../utils/utils.js');
+
 Component({
   properties: {
     background: {
@@ -112,7 +115,7 @@ Component({
       } else {
         wx.showModal({
           title: '提示',
-          content: '您还未登录，测试结果将仅供查看，不会上传！',
+          content: '您还未登录，测试结果将仅供查看，无法上传！',
           success (res) {
             if (res.confirm) {
               wx.navigateTo({
@@ -134,7 +137,7 @@ Component({
       } else {
         wx.showModal({
           title: '提示',
-          content: '您还未登录，测试结果将仅供查看，不会上传！',
+          content: '您还未登录，测试结果将仅供查看，无法上传！',
           success (res) {
             if (res.confirm) {
               wx.navigateTo({
@@ -151,16 +154,25 @@ Component({
     onShow: function(options) {
       let openid = wx.getStorageSync('openid')
       let that = this
-     db.collection('patient_list').where({
-       _openid: openid,
-     }).get({
-        success: function(res) {
-          that.setData({
-            type: res.data[0].type,
-            record: res.data[0].record
-          })
-        }
-      })
+      if (openid) {
+        db.collection('patient_list').where({
+          _openid: openid,
+        }).get({
+           success: function(res) {
+             that.setData({
+               type: res.data[0].type,
+               record: res.data[0].record.map((arr)=> formatTime(arr.time))
+             })
+            
+           }
+         })
+      } else {
+        this.setData({
+          type: "",
+          record: ""
+        })
+      }
+      
     }
   },
   pageLifetimes: {

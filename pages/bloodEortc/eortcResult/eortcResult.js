@@ -1,25 +1,38 @@
+const db = wx.cloud.database()
+const _ = db.command
+const openid = wx.getStorageSync('openid')
+
 Page({
   data: {
-    pf: "7",
-    rf: "7",
-    ef: "7",
-    cf: "7",
-    sf: "7",
-    ql: "7",
-    fa: "7",
-    nv: "7",
-    pa: "7",
-    dy: "7",
-    sl: "7",
-    ap: "7",
-    co: "7",
-    di: "7",
-    fi: "7",
+    pf: "",
+    rf: "",
+    ef: "",
+    cf: "",
+    sf: "",
+    ql: "",
+    fa: "",
+    nv: "",
+    pa: "",
+    dy: "",
+    sl: "",
+    ap: "",
+    co: "",
+    di: "",
+    fi: "",
     res: []
   },
   onLoad: function (options) {
+    let that = this
     let result = JSON.parse(options.res)
     let resInt = []
+
+    db.collection('patient_list').doc(openid).get({
+      success: res => {
+        that.setData({
+          record: res.data.record
+        })
+      }
+    })
 
     result.forEach(function(item) {
       resInt.push(parseInt(item))
@@ -60,13 +73,156 @@ Page({
       res: result
     })
 
-    console.log(this.data)
   },
   standardScoreFunc: function(rawScore, range) {
     return (1 - (rawScore - 1) / range ) * 100
   },
   standardScoreSymp: function(rawScore, range) {
     return ((rawScore - 1) / range ) * 100
+  },
+  submitData: function(event) {
+
+    let that = this
+    let last_record = this.data.record[this.data.record.length - 1]
+    
+    db.collection('patient_list').doc(openid).get({
+      success: res => {
+        let last_record_temp = res.data.record[res.data.record.length - 1]
+        let today = new Date().setHours(0,0,0,0)
+        let last_record_day = last_record_temp.time.setHours(0,0,0,0)
+
+        if (today === last_record_day) {
+          //今天已填
+          if (last_record_temp.eortc_data) {
+            wx.showModal({
+              title: '提示',
+              content: '您今天已经上传过结果，要覆盖当前记录吗？',
+              success (res) {
+                if (res.confirm) {
+                  wx.showLoading({
+                    title: '正在上传',
+                  })
+                  db.collection('patient_list').where({
+                    _id: openid,
+                    'record.time': last_record.time
+                  }).update({
+                    data: {
+                      'record.$.eortc_data': {
+                        answer: that.data.res,
+                        score: [that.data.pf, that.data.rf, that.data.ef, that.data.cf, that.data.sf, that.data.ql, that.data.fa, that.data.nv, that.data.pa, that.data.dy,that.data.sl, that.data.ap, that.data.co, that.data.di, that.data.fi]
+                      },
+                      'record.$.time': new Date()
+                    },
+                    success: res => {
+                      setTimeout(() => {
+                        wx.hideLoading({
+                          success: (res) => {
+                            wx.showToast({
+                              title: '上传成功！',
+                              duration: 1000,
+                              icon: 'success',
+                              success: res => {
+                                setTimeout(() => {
+                                  wx.redirectTo({
+                                    url: '../../lung/lung',
+                                  })
+                                }, 1000);
+                                
+                              }
+                            })
+                          },
+                        })
+                      }, 1000)
+                      
+                    }
+                  })
+                } else if (res.cancel) {
+                  
+                }
+              }
+            })
+          } else {
+            // 今天未填
+            wx.showLoading({
+              title: '正在上传',
+            })
+            db.collection('patient_list').where({
+              _id: openid,
+              'record.time': last_record.time
+            }).update({
+              data: {
+                'record.$.eortc_data': {
+                  answer: that.data.res,
+                  score: [that.data.pf, that.data.rf, that.data.ef, that.data.cf, that.data.sf, that.data.ql, that.data.fa, that.data.nv, that.data.pa, that.data.dy,that.data.sl, that.data.ap, that.data.co, that.data.di, that.data.fi]
+                },
+                'record.$.time': new Date()
+              },
+              success: res => {
+                setTimeout(() => {
+                  wx.hideLoading({
+                    success: (res) => {
+                      wx.showToast({
+                        title: '上传成功！',
+                        duration: 1000,
+                        icon: 'success',
+                        success: res => {
+                          setTimeout(() => {
+                            wx.redirectTo({
+                              url: '../../lung/lung',
+                            })
+                          }, 1000);
+                          
+                        }
+                      })
+                    },
+                  })
+                }, 1000)
+              }
+            })
+          }
+        } else {
+          //新一天
+          wx.showLoading({
+            title: '正在上传',
+          })
+          db.collection('patient_list').doc(openid).update({
+            data: {
+              record: _.push({
+                eortc_data: {
+                  answer: that.data.res,
+                  score: [that.data.pf, that.data.rf, that.data.ef, that.data.cf, that.data.sf, that.data.ql, that.data.fa, that.data.nv, that.data.pa, that.data.dy,that.data.sl, that.data.ap, that.data.co, that.data.di, that.data.fi]
+                },
+                time: new Date()
+              })
+            },
+            success: res => {
+              setTimeout(() => {
+                wx.hideLoading({
+                  success: (res) => {
+                    wx.showToast({
+                      title: '上传成功！',
+                      duration: 1000,
+                      icon: 'success',
+                      success: res => {
+                        setTimeout(() => {
+                          wx.redirectTo({
+                            url: '../../lung/lung',
+                          })
+                        }, 1000);
+                        
+                      }
+                    })
+                  },
+                })
+              }, 1000)
+            }
+          })
+        }
+
+      },
+      fail: res => {
+      }
+    })
   }
 
 })

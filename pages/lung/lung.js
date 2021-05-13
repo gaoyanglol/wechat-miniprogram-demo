@@ -11,17 +11,17 @@ Page({
   goForm: function(event) {
     switch (event.currentTarget.dataset.form) {
       case "1":
-        wx.navigateTo({
+        wx.redirectTo({
           url: '/pages/bloodVas/bloodVas',
         })
         break
       case "2":
-        wx.navigateTo({
+        wx.redirectTo({
           url: '/pages/bloodLcq/bloodLcq',
         })
         break
       case "3":
-        wx.navigateTo({
+        wx.redirectTo({
           url: '/pages/bloodEortc/bloodEortc',
         })
         break

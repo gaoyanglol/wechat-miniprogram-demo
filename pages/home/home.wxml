@@ -10,7 +10,7 @@
           <image src='{{titleImg}}' style='{{iconStyle}}'></image>
         </view>
         <view class='nav-title' wx:if="{{titleText}}">
-          <!-- <text style='{{textStyle}}'>{{titleText}}</text> -->
+          <text style='{{textStyle}}'>{{titleText}}</text>
         </view>
       </view>
     </view>
@@ -50,8 +50,8 @@
     </view>
     <view class="records" wx:for="{{record}}">
       <view class="record-name" wx:if="{{type == 1}}"><text>血糖、糖脂检测</text></view>
-      <view class="record-name" wx:elif="{{type == 0}}"><text>肺功能监测</text></view>
-      <view class="record-time"><text>{{item.time}}</text></view>
+      <view class="record-name" wx:elif="{{type == 0}}"><text>肺功能检测</text></view>
+      <view class="record-time"><text>{{item}}</text></view>
     </view>
   </view>
 </view>

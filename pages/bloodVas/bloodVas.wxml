@@ -13,6 +13,6 @@
     </view>
   </view>
   <view class="btn-area">
-    <button disabled="{{disabled}}">上传</button>
+    <button disabled="{{disabled}}" bindtap="submitData">上传</button>
   </view>
 </view>
