@@ -5,19 +5,19 @@
   <view class="content">
     <view class="item">
       <text class="item-name">空腹血糖</text>
-      <input class="item-ipt" type="digit" placeholder="mmol/L" placeholder-class="placeholder" bindinput="fpgStorage"/>
+      <input class="item-ipt" type="digit" placeholder="mmol/L" value="{{fpg_data}}" placeholder-class="placeholder" bindinput="fpgStorage"/>
     </view>
     <view class="item">
       <text class="item-name">早餐后2小时</text>
-      <input class="item-ipt" type="digit" placeholder="mmol/L" placeholder-class="placeholder" />
+      <input class="item-ipt" type="digit" placeholder="mmol/L" value="{{breakfast_data}}" placeholder-class="placeholder"  bindinput="breakfastStorage"/>
     </view>
     <view class="item">
       <text class="item-name">午餐后2小时</text>
-      <input class="item-ipt" type="digit" placeholder="mmol/L" placeholder-class="placeholder" />
+      <input class="item-ipt" type="digit" placeholder="mmol/L" value="{{lunch_data}}" placeholder-class="placeholder"  bindinput="lunchStorage"/>
     </view>
     <view class="item">
       <text class="item-name">晚餐后2小时</text>
-      <input class="item-ipt" type="digit" placeholder="mmol/L" placeholder-class="placeholder" />
+      <input class="item-ipt" type="digit" placeholder="mmol/L" value="{{dinner_data}}" placeholder-class="placeholder"  bindinput="dinnerStorage"/>
     </view>
   </view>
 
