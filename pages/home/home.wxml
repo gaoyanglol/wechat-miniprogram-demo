@@ -10,7 +10,7 @@
           <image src='{{titleImg}}' style='{{iconStyle}}'></image>
         </view>
         <view class='nav-title' wx:if="{{titleText}}">
-          <text style='{{textStyle}}'>{{titleText}}</text>
+          <!-- <text style='{{textStyle}}'>{{titleText}}</text> -->
         </view>
       </view>
     </view>

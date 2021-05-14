@@ -83,7 +83,7 @@ Page({
                     data: {
                       'record.$.vas_data': that.data.chosenNum,
                       'record.$.time': new Date()
-                    },
+                    },                    
                     success: res => {
                       setTimeout(() => {
                         wx.hideLoading({

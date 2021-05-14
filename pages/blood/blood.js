@@ -11,12 +11,12 @@ Page({
   goForm: function(event) {
     switch (event.currentTarget.dataset.form) {
       case "1":
-        wx.navigateTo({
+        wx.redirectTo({
           url: '/pages/lungFpg/lungFpg',
         })
         break
       case "2":
-        wx.navigateTo({
+        wx.redirectTo({
           url: '/pages/lungMeta/lungMeta',
         })
         break
