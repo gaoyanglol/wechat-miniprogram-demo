@@ -145,3 +145,14 @@
   margin-top: 20rpx;
   font-weight: 500;
 }
+.norecord {
+  width: 688.88rpx;
+  height: 115.94rpx;
+  margin: 25rpx auto;
+  padding: 25.96rpx 33.81rpx;
+  box-sizing: border-box;
+  font-size: 24.31rpx;
+  line-height: 1;
+  text-align: center;
+  color: #8D8D8D;
+}

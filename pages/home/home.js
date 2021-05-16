@@ -55,7 +55,8 @@ Component({
     duration: 1000,
     indicatorColor: "rgba(255,255,255, .5)",
     indicatorActiveColor: "rgba(255,255,255, 1)",
-    record: []
+    record: "",
+    type: ""
   },
   methods: {
     // 通过获取系统信息计算导航栏高度        
@@ -109,21 +110,34 @@ Component({
     },
     goBlood(event) {
       if(wx.getStorageSync('openid')) {
-        wx.navigateTo({
-          url: '/pages/blood/blood'
-        })
+        if (this.data.type === 1) {
+          wx.navigateTo({
+            url: '/pages/blood/blood'
+          })
+        } else {
+          wx.showModal({
+            title: '提示',
+            content: '您参与的不是该随访项目，您可进行该项目的检测，但检测数据无法上传！',
+            success (res) {
+              if (res.confirm) {
+                wx.navigateTo({
+                  url: '/pages/blood/blood'
+                })
+              } else if (res.cancel) {}
+            }
+          })
+        }
+        
       } else {
         wx.showModal({
           title: '提示',
-          content: '您还未登录，测试结果将仅供查看，无法上传！',
+          content: '您还未登录，您可进行该项目的检测，但检测数据无法上传！',
           success (res) {
             if (res.confirm) {
               wx.navigateTo({
                 url: '/pages/blood/blood'
               })
-            } else if (res.cancel) {
-              
-            }
+            } else if (res.cancel) {}
           }
         })
       }
@@ -131,13 +145,28 @@ Component({
     },
     goLung(event) {
       if(wx.getStorageSync('openid')) {
-        wx.navigateTo({
-          url: '/pages/lung/lung'
-        })
+        if(this.data.type === 0) {
+          wx.navigateTo({
+            url: '/pages/lung/lung'
+          })
+        } else {
+          wx.showModal({
+            title: '提示',
+            content: '您参与的不是该随访项目，您可进行该项目的检测，但检测数据无法上传！',
+            success (res) {
+              if (res.confirm) {
+                wx.navigateTo({
+                  url: '/pages/lung/lung'
+                })
+              } else if (res.cancel) {}
+            }
+          })
+        }
+        
       } else {
         wx.showModal({
           title: '提示',
-          content: '您还未登录，测试结果将仅供查看，无法上传！',
+          content: '您还未登录，您可进行该项目的检测，但检测数据无法上传！',
           success (res) {
             if (res.confirm) {
               wx.navigateTo({
@@ -172,7 +201,6 @@ Component({
           record: ""
         })
       }
-      
     }
   },
   pageLifetimes: {

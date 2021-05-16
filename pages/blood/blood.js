@@ -3,6 +3,7 @@ Page({
   data: {
     _num : 1
   },
+  
   changeTab: function(event) {
     this.setData({
       _num: event.target.dataset.num

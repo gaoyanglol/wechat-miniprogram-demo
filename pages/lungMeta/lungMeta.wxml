@@ -1,31 +1,46 @@
 <view class="container">
   <view style="display: flex; align-items: center; width: 638.88rpx; margin: auto; height: 120rpx; text-align: left">
-    
+    <text>点击上传之前，各项数据会临时保存在小程序中，您可分时段填写。</text>
   </view>
   <view class="content">
     <view class="item">
       <text class="item-name">GLU</text>
-      <input class="item-ipt" type="digit" placeholder="血清葡萄糖" placeholder-class="placeholder" />
+      <input class="item-ipt" type="digit" placeholder="血清葡萄糖" value="{{glu_data}}" placeholder-class="placeholder" bindinput="gluStorage"/>
+      <view class="status">
+        <image src="{{gluStatus}}" mode="widthFix"></image>
+      </view>
     </view>
     <view class="item">
       <text class="item-name">TC</text>
-      <input class="item-ipt" type="digit" placeholder="总胆固醇" placeholder-class="placeholder" />
+      <input class="item-ipt" type="digit" placeholder="总胆固醇" value="{{tc_data}}" placeholder-class="placeholder" bindinput="tcStorage"/>
+      <view class="status">
+        <image src="{{tcStatus}}" mode="widthFix"></image>
+      </view>
     </view>
     <view class="item">
       <text class="item-name">TG</text>
-      <input class="item-ipt" type="digit" placeholder="甘油三酯" placeholder-class="placeholder" />
+      <input class="item-ipt" type="digit" placeholder="甘油三酯" value="{{tg_data}}" placeholder-class="placeholder" bindinput="tgStorage"/>
+      <view class="status">
+        <image src="{{tgStatus}}" mode="widthFix"></image>
+      </view>
     </view>
     <view class="item">
       <text class="item-name">HDL-C</text>
-      <input class="item-ipt" type="digit" placeholder="高密度脂蛋白胆固醇" placeholder-class="placeholder" />
+      <input class="item-ipt" type="digit" placeholder="高密度脂蛋白胆固醇" value="{{hdlc_data}}" placeholder-class="placeholder" bindinput="hdlcStorage" />
+      <view class="status">
+        <image src="{{hdlcStatus}}" mode="widthFix"></image>
+      </view>
     </view>
     <view class="item">
       <text class="item-name">LDL-C</text>
-      <input class="item-ipt" type="digit" placeholder="低密度脂蛋白胆固醇" placeholder-class="placeholder" />
+      <input class="item-ipt" type="digit" placeholder="低密度脂蛋白胆固醇" value="{{ldlc_data}}" placeholder-class="placeholder" bindinput="ldlcStorage" />
+      <view class="status">
+        <image src="{{ldlcStatus}}" mode="widthFix"></image>
+      </view>
     </view>
   </view>
 
-  <view class="btn-area">
+  <view class="btn-area" style="display: {{display}}">
     <button hover-class="button-hover" bindtap="submitData">上传</button>
   </view>
 </view>

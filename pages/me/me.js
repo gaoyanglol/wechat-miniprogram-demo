@@ -99,6 +99,15 @@ Component({
         success (res) {
           if (res.confirm) {
             wx.removeStorageSync('openid')
+            wx.removeStorageSync('fpg_temp')
+            wx.removeStorageSync('breakfast_temp')
+            wx.removeStorageSync('lunch_temp')
+            wx.removeStorageSync('dinner_temp')
+            wx.removeStorageSync('glu_temp')
+            wx.removeStorageSync('tc_temp')
+            wx.removeStorageSync('tg_temp')
+            wx.removeStorageSync('hdlc_temp')
+            wx.removeStorageSync('ldlc_temp')
             that.onShow()
           } else if (res.cancel) {
             

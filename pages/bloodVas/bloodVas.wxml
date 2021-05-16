@@ -12,7 +12,7 @@
       </view>
     </view>
   </view>
-  <view class="btn-area">
-    <button disabled="{{disabled}}" bindtap="submitData">上传</button>
+  <view class="btn-area" style="display: {{display}}">
+    <button hover-class="button-hover" disabled="{{disabled}}" bindtap="submitData">上传</button>
   </view>
 </view>

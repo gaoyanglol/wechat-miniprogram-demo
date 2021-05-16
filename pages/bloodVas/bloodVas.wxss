@@ -64,3 +64,6 @@
 .btn-area button::after {
   border: none
 }
+.btn-area button.button-hover {
+  background:#8ae3ea;
+}

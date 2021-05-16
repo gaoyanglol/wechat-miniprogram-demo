@@ -17,15 +17,26 @@ Page({
       {value: '10', name: '10'},
     ],
     chosenNum : "",
-    disabled: true
+    disabled: true,
+    display: ""
   },
   onLoad: function(options) {
     let that = this
     db.collection('patient_list').doc(openid).get({
       success: res => {
         that.setData({
+          type: res.data.type,
           record: res.data.record
         })
+        if (wx.getStorageSync('openid') && that.data.type === 0) {
+          that.setData({
+            display: 'block'
+          })
+        } else {
+          that.setData({
+            display: 'none'
+          })
+        }
       }
     })
   },
