@@ -10,7 +10,7 @@ Page({
     social: "",
     total: "",
     res: [],
-    display: ""
+    display: "none"
   },
   onLoad: function (options) {
     let that = this
@@ -23,15 +23,25 @@ Page({
           type: res.data.type,
           record: res.data.record
         })
-        if (wx.getStorageSync('openid') && that.data.type === 0) {
-          that.setData({
-            display: 'block'
-          })
+
+        if (wx.getStorageSync('openid')) {
+          if(that.data.type === 0) {
+            that.setData({
+              display: 'block'
+            })
+          } else {
+            that.setData({
+              display: 'none'
+            })
+          }
         } else {
           that.setData({
             display: 'none'
           })
         }
+      },
+      fail: res => {
+        console.log(res)
       }
     })
 
