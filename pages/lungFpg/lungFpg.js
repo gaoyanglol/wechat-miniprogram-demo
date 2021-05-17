@@ -17,13 +17,12 @@ Page({
   },
   onLoad: function(options) {
     let that = this
-    db.collection('patient_list').doc(openid).get({
+    db.collection('patient_list').doc(wx.getStorageSync('openid')).get({
       success: res => {
         that.setData({
           type: res.data.type,
           record: res.data.record
         })
-        console.log(this.data)
         if (wx.getStorageSync('openid')) {
           if(that.data.type === 1) {
             that.setData({
@@ -146,7 +145,7 @@ Page({
       let that = this
       let last_record = this.data.record[this.data.record.length - 1]
 
-      db.collection('patient_list').doc(openid).get({
+      db.collection('patient_list').doc(wx.getStorageSync('openid')).get({
         success: res => {
           let last_record_temp = res.data.record[res.data.record.length - 1]
           let today = new Date().setHours(0,0,0,0)
@@ -258,7 +257,7 @@ Page({
             wx.showLoading({
               title: '正在上传',
             })
-            db.collection('patient_list').doc(openid).update({
+            db.collection('patient_list').doc(wx.getStorageSync('openid')).update({
               data: {
                 record: _.push({
                   glu_data: {
@@ -312,7 +311,7 @@ Page({
           if (res.confirm) {
             let last_record = that.data.record[that.data.record.length - 1]
 
-            db.collection('patient_list').doc(openid).get({
+            db.collection('patient_list').doc(wx.getStorageSync('openid')).get({
               success: res => {
                 let last_record_temp = res.data.record[res.data.record.length - 1]
                 let today = new Date().setHours(0,0,0,0)
@@ -424,7 +423,7 @@ Page({
                   wx.showLoading({
                     title: '正在上传',
                   })
-                  db.collection('patient_list').doc(openid).update({
+                  db.collection('patient_list').doc(wx.getStorageSync('openid')).update({
                     data: {
                       record: _.push({
                         glu_data: {
