@@ -4,7 +4,7 @@
     <view class="tab"><text data-num="2" class="{{_num==2?'selected':''}}" bindtap="changeTab">历史记录</text></view>
   </view>
   <view class="content">
-    <view class="nav">
+    <view class="nav" style="display: {{display? 'block' : 'none'}}">
       <view class="nav-item" data-form="1" bindtap="goForm">
         <view class="item-name"><text>VAS疼痛视觉模拟评分</text></view>
         <view class="item-sub"><text>表达您的疼痛程度</text></view>
@@ -33,5 +33,6 @@
         <image src="/image/life.png" mode="heightFix"></image>
       </view>
     </view>
+    <view class="record" style="display: {{display? 'none' : 'block'}}"></view>
   </view>
 </view>

@@ -48,17 +48,18 @@
     <view class="sub-title">
       <text>检测记录</text>
     </view>
-    <block wx:if="{{record !== ''}}">
+    <view class="records-list" wx:if="{{record !== ''}}">
       <view class="records" wx:for="{{record}}">
         <view class="record-name" wx:if="{{type == 1}}"><text>血糖、糖脂检测</text></view>
         <view class="record-name" wx:elif="{{type == 0}}"><text>肺功能检测</text></view>
         <view class="record-time"><text>{{item}}</text></view>
+        <view class="record-check" bindtap="checkRecord">查看</view>
       </view>
-    </block>
-    <block wx:elif="{{record === ''}}">
+    </view>
+    <view wx:elif="{{record === ''}}">
       <view class="norecord">
         暂无记录
       </view>
-    </block>
+    </view>
   </view>
 </view>

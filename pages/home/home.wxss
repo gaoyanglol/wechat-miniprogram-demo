@@ -1,6 +1,6 @@
 /* pages/home/home.wxss */
 .container {
-  padding-bottom: 160rpx;
+  padding-bottom: 180rpx;
 }
 .header-bar {
   border-radius: 0 0 35.41rpx 35.41rpx;
@@ -124,16 +124,21 @@
   height: 166.69rpx;
   margin: 47.7rpx auto;
 }
+.records-list {
+  display: flex;
+  flex-direction: column-reverse;
+}
 .records {
   width: 688.88rpx;
   height: 115.94rpx;
-  margin: 25rpx auto;
+  margin: 13rpx auto;
   padding: 25.96rpx 33.81rpx;
   box-sizing: border-box;
   background: #fff;
   box-shadow: 0 1px 7px rgba(0, 0, 0, .1);
   border-radius: 16.91rpx;
   line-height: 1;
+  position: relative;
 }
 .record-name {
   font-size: 26.39rpx;
@@ -144,6 +149,20 @@
   color: #8D8D8D;
   margin-top: 20rpx;
   font-weight: 500;
+}
+.record-check {
+  width: 112.5rpx;
+  height: 41rpx;
+  background: #f5f5f5;
+  font-size: 26.39rpx;
+  color: #00c7d6;
+  text-align: center;
+  line-height: 41rpx;
+  border-radius: 20.5rpx;
+  position: absolute;
+  right: 32.6rpx;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .norecord {
   width: 688.88rpx;

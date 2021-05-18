@@ -1,6 +1,5 @@
 const db = wx.cloud.database()
 const _ = db.command
-const openid = wx.getStorageSync('openid')
 var debounce = require('../../utils/debounce.js')
 
 Page({
@@ -135,6 +134,7 @@ Page({
   }, 300),
 
   submitData: function(event) {
+    const openid = wx.getStorageSync('openid')
     let fpgIsEmpty = this.data.fpg_data !== "" ? true : false
     let breakfastIsEmpty = this.data.breakfast_data !== "" ? true : false
     let lunchIsEmpty = this.data.lunch_data !== "" ? true : false
@@ -145,7 +145,7 @@ Page({
       let that = this
       let last_record = this.data.record[this.data.record.length - 1]
 
-      db.collection('patient_list').doc(wx.getStorageSync('openid')).get({
+      db.collection('patient_list').doc(openid).get({
         success: res => {
           let last_record_temp = res.data.record[res.data.record.length - 1]
           let today = new Date().setHours(0,0,0,0)
@@ -200,6 +200,9 @@ Page({
                           })
                         }, 1000)
                         
+                      },
+                      fail: res => {
+                        console.log(res)
                       }
                     })
                   } else if (res.cancel) {
@@ -249,6 +252,9 @@ Page({
                       },
                     })
                   }, 1000)
+                },
+                fail: res=> {
+                  console.log(res)
                 }
               })
             }
@@ -257,7 +263,7 @@ Page({
             wx.showLoading({
               title: '正在上传',
             })
-            db.collection('patient_list').doc(wx.getStorageSync('openid')).update({
+            db.collection('patient_list').doc(openid).update({
               data: {
                 record: _.push({
                   glu_data: {
@@ -293,12 +299,17 @@ Page({
                     },
                   })
                 }, 1000)
+              },
+              fail: res => {
+                console.log(res)
               }
             })
           }
           
         },
-        fail: res => { }
+        fail: res => {
+          console.log(res)
+        }
       })
       
     } else {
@@ -311,7 +322,7 @@ Page({
           if (res.confirm) {
             let last_record = that.data.record[that.data.record.length - 1]
 
-            db.collection('patient_list').doc(wx.getStorageSync('openid')).get({
+            db.collection('patient_list').doc(openid).get({
               success: res => {
                 let last_record_temp = res.data.record[res.data.record.length - 1]
                 let today = new Date().setHours(0,0,0,0)
@@ -366,6 +377,9 @@ Page({
                                 })
                               }, 1000)
                               
+                            },
+                            fail: res => {
+                              console.log(res)
                             }
                           })
                         } else if (res.cancel) {
@@ -415,6 +429,9 @@ Page({
                             },
                           })
                         }, 1000)
+                      }, 
+                      fail: res => {
+                        console.log(res)
                       }
                     })
                   }
@@ -423,7 +440,7 @@ Page({
                   wx.showLoading({
                     title: '正在上传',
                   })
-                  db.collection('patient_list').doc(wx.getStorageSync('openid')).update({
+                  db.collection('patient_list').doc(openid).update({
                     data: {
                       record: _.push({
                         glu_data: {
@@ -459,12 +476,17 @@ Page({
                           },
                         })
                       }, 1000)
+                    },
+                    fail: res => {
+                      console.log(res)
                     }
                   })
                 }
                 
               },
-              fail: res => { }
+              fail: res => {
+                console.log(res)
+              }
             })
           } else if (res.cancel) {}
         }

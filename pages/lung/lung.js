@@ -1,12 +1,28 @@
+const db = wx.cloud.database()
+const { formatTime } = require('../../utils/utils.js');
+
 Page({
   data: {
-    _num : 1
+    _num : 1,
+    display: true
   },
 
   changeTab: function(event) {
     this.setData({
       _num: event.target.dataset.num
     })
+    switch (this.data._num) {
+      case "1":
+        this.setData({
+          display: true
+        })
+        break
+      case "2":
+        this.setData({
+          display: false
+        })
+        
+    }
   },
   goForm: function(event) {
     switch (event.currentTarget.dataset.form) {

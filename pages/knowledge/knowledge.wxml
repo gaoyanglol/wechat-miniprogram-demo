@@ -1,3 +1,62 @@
-<view>
-  <text>疾病知识\n正在建设中</text>
+<view class="container">
+  <view class="content">
+    <view class="articles">
+      <view class="nav-item" bindtap="">
+        <view class="article-img">
+          <image src="../../image/water.jpg" mode="aspectFill"></image>
+        </view>
+        <view class="item-title"><text>千滚水、隔夜水致癌？越贵的水越好？喝水的真相令人意想不到</text></view>
+        <view class="item-date">
+          <view space="nbsp">2019-10-14</view>
+        </view>      
+      </view>
+      <view class="nav-item" bindtap="">
+        <view class="article-img">
+          <image src="../../image/liver.png" mode="aspectFill"></image>
+        </view>
+        <view class="item-title"><text>糖友护肝也需有道</text></view>
+        <view class="item-date">
+          <view space="nbsp">2019-10-14</view>
+        </view>      
+      </view>
+      <view class="nav-item" bindtap="">
+        <view class="article-img">
+          <image src="../../image/20210518155354.png" mode="aspectFill"></image>
+        </view>
+        <view class="item-title"><text>糖尿病的４个危险征兆</text></view>
+        <view class="item-date">
+          <view space="nbsp">2019-10-14</view>
+        </view>      
+      </view>
+      <view class="nav-item" bindtap="">
+        <view class="article-img">
+          <image src="../../image/20210518160731.png" mode="aspectFill"></image>
+        </view>
+        <view class="item-title"><text>糖尿病牵着3种癌症 危险加倍</text></view>
+        <view class="item-date">
+          <view space="nbsp">2019-10-14</view>
+        </view>      
+      </view>
+      <view class="nav-item" bindtap="">
+        <view class="article-img">
+          <image src="../../image/20210518160904.png" mode="aspectFill"></image>
+        </view>
+        <view class="item-title"><text>中年女性谨防糖尿病</text></view>
+        <view class="item-date">
+          <view space="nbsp">2019-10-14</view>
+        </view>      
+      </view>
+      <view class="nav-item" bindtap="">
+        <view class="article-img">
+          <image src="../../image/20210518161352.png" mode="aspectFill"></image>
+        </view>
+        <view class="item-title"><text>糖尿病知识：浅谈糖友昏迷类型和特点</text></view>
+        <view class="item-date">
+          <view space="nbsp">2019-10-14</view>
+        </view>      
+      </view>
+     
+    </view>
+    
+  </view>
 </view>

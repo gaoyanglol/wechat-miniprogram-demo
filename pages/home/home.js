@@ -201,6 +201,7 @@ Component({
           record: ""
         })
       }
+      console.log(this.data)
     }
   },
   pageLifetimes: {

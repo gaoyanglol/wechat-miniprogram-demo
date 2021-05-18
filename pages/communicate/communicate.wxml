@@ -1,3 +1,39 @@
-<view>
-  <text>医患沟通\n正在建设中</text>
+<view class="container">
+  <view class="content">
+    <view class="nav-item" data-form="1" bindtap="">
+        <view class="item-name">
+          <text>系统通知</text>
+        </view>
+        <view class="item-sub">
+          <text space="nbsp">您有新的消息</text>
+        </view>
+        <view class="item-img">
+          <image src="../../image/notification.png" mode="aspectFill"></image>
+        </view>        
+      </view>
+    <view class="nav-item" data-form="1" bindtap="">
+        <view class="item-name">
+          <text>郑亮</text>
+          <text class="position">主任医生</text>
+        </view>
+        <view class="item-sub">
+          <text space="nbsp">常州市第一人民一院 | 胸外科</text>
+        </view>
+        <view class="item-img">
+          <image src="../../image/avatar1.jpg" mode="aspectFill"></image>
+        </view>        
+      </view>
+    <view class="nav-item" data-form="1" bindtap="">
+        <view class="item-name">
+          <text>蒋妍如</text>
+          <text class="position">护士长</text>
+        </view>
+        <view class="item-sub">
+          <text space="nbsp">常州市第一人民一院 | 胸外科</text>
+        </view>
+        <view class="item-img">
+          <image src="../../image/avatar2.jpg" mode="aspectFill"></image>
+        </view>        
+      </view>
+  </view>
 </view>

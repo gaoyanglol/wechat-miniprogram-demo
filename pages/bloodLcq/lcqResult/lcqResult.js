@@ -1,6 +1,5 @@
 const db = wx.cloud.database()
 const _ = db.command
-const openid = wx.getStorageSync('openid')
 var util = require('../../../utils/utils.js')
 
 Page({
@@ -64,11 +63,11 @@ Page({
 
   },
   submitData: function(event) {
-
+    const openid = wx.getStorageSync('openid')
     let that = this
     let last_record = this.data.record[this.data.record.length - 1]
     
-    db.collection('patient_list').doc(wx.getStorageSync('openid')).get({
+    db.collection('patient_list').doc(openid).get({
       success: res => {
         let last_record_temp = res.data.record[res.data.record.length - 1]
         let today = new Date().setHours(0,0,0,0)
@@ -168,7 +167,7 @@ Page({
           wx.showLoading({
             title: '正在上传',
           })
-          db.collection('patient_list').doc(wx.getStorageSync('openid')).update({
+          db.collection('patient_list').doc(openid).update({
             data: {
               record: _.push({
                 lcq_data: {
