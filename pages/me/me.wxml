@@ -22,6 +22,36 @@
         <open-data type="userGender" lang="zh_CN"></open-data>
       </view>
     </view>
+    <view class="collections">
+      <view class="collect-list">
+        <view class="collect-list-title"><text>我的关注</text></view>
+        <view style="color: #8D8D8D;font-size:28rpx"><text>暂无关注</text></view>
+      </view>
+      <view class="collect-list">
+        <view class="collect-list-title"><text>我的优惠券</text></view>
+        <view style="color: #00c7d6;font-size:28rpx"><text>0张</text></view>
+      </view>
+    </view>
+
+    <view class="functions">
+      <view class="func-list">
+        <text>我的医生</text>
+      </view>
+      <view class="func-list">
+        <text>我的订单</text>
+      </view>
+    </view>
+    <view class="functions">
+      <view class="func-list">
+        <text>地址管理</text>
+      </view>
+      <view class="func-list">
+        <text>联系我们</text>
+      </view>
+      <view class="func-list">
+        <text>意见反馈</text>
+      </view>
+    </view>
 
     <view class="login-area">
       <button class="login" wx:if="{{isLogin === 0}}" bindtap="login">登录/注册</button>

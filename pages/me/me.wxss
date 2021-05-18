@@ -1,6 +1,6 @@
 .container {
   height: 100vh;
-  background: #f8f8f8;
+  background: #fff;
 }
 .header-bar {
   border-radius: 0 0 35.41rpx 35.41rpx;
@@ -28,7 +28,7 @@
 .userInfo {
   position: relative;
   width: 670rpx;
-  margin: 30rpx auto 0;
+  margin: 30rpx auto 40rpx;
   color: #fff;
   line-height: 50rpx;
 }
@@ -38,23 +38,30 @@
   clear: both;
 }
 .avatar {
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 50rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
   overflow: hidden;
   float:left;
-  margin-right: 20rpx;
+  margin-right: 30rpx;
 }
 .nickname {
+  height: 60rpx;
   font-weight: bold;
+  line-height: 60rpx;
+}
+.gender {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28.98rpx;
 }
 .login-area {
-  position: absolute;
+  /* position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 200rpx;
+  bottom: 200rpx; */
   width: 688.88rpx;
-  margin: auto;
+  margin: 45rpx auto 0;
 }
 .login-area button {
   width: 100%;
@@ -66,6 +73,7 @@
   border: 0;
   outline: none;
   padding: 0;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, .05);
 }
 .login-area button::after {
   content: "";
@@ -73,4 +81,71 @@
 }
 .login-area button.logout {
   color: red;
+}
+.collections {
+  width: 688.88rpx;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.collect-list {
+  position: relative;
+  width: 47.5%;
+  height: 140rpx;
+  background: #fff;
+  border-radius: 16.9rpx;
+  box-sizing: border-box;
+  padding: 25rpx 30rpx;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, .05);
+  font-size: 30rpx;
+  line-height: 45rpx;
+}
+.collect-list-title {
+  /* font-weight: 600; */
+  position: relative;
+}
+.collect-list-title::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 10rpx;
+  top: 50%;
+  width: 14rpx;
+  height: 14rpx;
+  border-right: 3rpx solid black;
+  border-top: 3rpx solid black;
+  transform: rotate(45deg) translateY(-50%);
+}
+.functions {
+  width: 688.88rpx;
+  margin: auto;
+  border-radius: 16.9rpx;
+  box-sizing: border-box;
+  padding: 25rpx 30rpx;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, .05);
+  font-size: 32.6rpx;
+  margin-top: 45rpx;
+  background: #fff
+}
+.func-list {
+  height: 80rpx;
+  border-bottom: 1px solid #f8f8f8;
+  line-height: 80rpx;
+  /* font-weight: 600; */
+  position: relative;
+}
+.func-list::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 10rpx;
+  top: 50%;
+  width: 14rpx;
+  height: 14rpx;
+  border-right: 3rpx solid black;
+  border-top: 3rpx solid black;
+  transform: rotate(45deg) translateY(-50%);
+}
+.func-list:last-child {
+  border-bottom: none;
 }

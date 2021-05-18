@@ -94,7 +94,7 @@
   box-sizing:border-box;
   padding: 38.64rpx 30.19rpx;
   font-size: 24.31rpx;
-  box-shadow: 0 1px 7px rgba(0,0,0, .2)
+  box-shadow: 0 1px 7px rgba(0,0,0, .1)
 }
 .entrance .h5 {
   font-size: 36.23rpx;
@@ -152,13 +152,13 @@
 }
 .record-check {
   width: 112.5rpx;
-  height: 41rpx;
+  height: 46rpx;
   background: #f5f5f5;
   font-size: 26.39rpx;
   color: #00c7d6;
   text-align: center;
-  line-height: 41rpx;
-  border-radius: 20.5rpx;
+  line-height: 46rpx;
+  border-radius: 23rpx;
   position: absolute;
   right: 32.6rpx;
   top: 50%;
