@@ -129,7 +129,7 @@
 }
 .func-list {
   height: 80rpx;
-  border-bottom: 1px solid #f8f8f8;
+  border-bottom: 1px solid #f4f4f4;
   line-height: 80rpx;
   /* font-weight: 600; */
   position: relative;

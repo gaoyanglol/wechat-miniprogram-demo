@@ -8,7 +8,7 @@
   height: 90rpx;
   border-radius: 16.9rpx;
   position: relative;
-  border-bottom: 1px solid #f8f8f8;
+  border-bottom: 1px solid #f4f4f4;
 }
 
 .nav-item .item-name {

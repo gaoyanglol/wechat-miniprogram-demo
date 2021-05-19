@@ -29,13 +29,14 @@ function formatTime(date) {
   var minute = date.getMinutes()
   var second = date.getSeconds()
 
-  return year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second
-  // return [year, month, day, hour, minute, second].map(formatNumber).join('') 
+  // return year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second
+  let full = [year, month, day, hour, minute, second].map(formatNumber)
+  return full[0] + '-' + full[1] + '-' + full[2] + ' ' + full[3] + ':' + full[4] + ':' + full[5]
 }
-// function formatNumber(n) {
-//   n = n.toString()
-//   return n[1] ? n : '0' + n
-// }
+function formatNumber(n) {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
 
 module.exports = {
   formatTime: formatTime,
