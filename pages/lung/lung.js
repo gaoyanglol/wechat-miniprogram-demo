@@ -4,10 +4,37 @@ const { formatTime } = require('../../utils/utils.js');
 Page({
   data: {
     _num : 1,
-    display: true,
     toggle: false
   },
 
+  onLoad: function(e) {
+    if(e.display === 'false') {
+      const openid = wx.getStorageSync('openid')
+      let that = this
+      this.setData({
+        display: false,
+        _num: 2
+      })
+      db.collection('patient_list').doc(openid).get({
+        success: res => {
+          let _record = res.data.record
+          for (let i = 0 ; i < _record.length; i++) {
+            _record[i].time = formatTime(_record[i].time)
+          }
+          that.setData({
+            record: _record
+          })
+        },
+        fail: res => {
+          console.log(res)
+        }
+      })
+    } else {
+      this.setData({
+        display: true
+      })
+    }
+  },
   recordFold: function(e) {
   },
   recordToggle: function(e) {

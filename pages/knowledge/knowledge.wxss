@@ -19,7 +19,6 @@
   position: relative;
 }
 .nav-item > .article-img {
-  background: #8D8D8D;
   width: 25%;
   height: 100%;
   float: left;

@@ -188,11 +188,21 @@ Component({
           _openid: openid,
         }).get({
            success: function(res) {
-             that.setData({
-               type: res.data[0].type,
-               record: res.data[0].record.map((arr)=> formatTime(arr.time))
-             })
-            
+            that.setData({
+              type: res.data[0].type,
+              record: res.data[0].record.map((arr)=> formatTime(arr.time))
+            })
+
+             let today =  new Date().setHours(0,0,0,0)
+             let last_record = res.data[0].record[res.data[0].record.length - 1]
+             
+             if (today === last_record.time.setHours(0,0,0,0)) {
+               let index = that.data.record.length - 1
+               that.setData({
+                [`record[${index}]`] : '今天'
+               })
+             }
+             
            }
          })
       } else {
@@ -201,7 +211,17 @@ Component({
           record: ""
         })
       }
-      console.log(this.data)
+    },
+    checkRecord: function() {
+      if(this.data.type === 0) {
+        wx.navigateTo({
+          url: '../lung/lung?display=' + false,
+        })
+      } else if(this.data.type === 1) {
+        wx.navigateTo({
+          url: '../blood/blood?display=' + false,
+        })
+      }
     }
   },
   pageLifetimes: {

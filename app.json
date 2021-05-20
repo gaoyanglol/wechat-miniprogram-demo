@@ -1,8 +1,8 @@
 {
   "pages": [
 
-    "pages/lung/lung",
     "pages/home/home",
+    "pages/lung/lung",
     
     "pages/knowledge/knowledge",
     "pages/communicate/communicate",
