@@ -6,6 +6,7 @@
 .tabbar {
   background: #fff;
   position: fixed;
+  z-index: 1;
   width: 100vw;
   top: 0;
   border-bottom: 1px solid #f4f4f4;
@@ -75,6 +76,9 @@
 .item-sub image {
   width: 19rpx;
   height: 19rpx;
+}
+.record {
+  flex-direction: column-reverse;
 }
 .record-item {
   background: #fff;

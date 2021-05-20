@@ -8,6 +8,8 @@ Page({
     toggle: false
   },
 
+  recordFold: function(e) {
+  },
   recordToggle: function(e) {
     this.setData({
       toggle: !this.data.toggle
@@ -31,16 +33,20 @@ Page({
         })
         db.collection('patient_list').doc(openid).get({
           success: res => {
+            let _record = res.data.record
+            for (let i = 0 ; i < _record.length; i++) {
+              _record[i].time = formatTime(_record[i].time)
+            }
             that.setData({
-              record: res.data.record
+              record: _record
             })
           },
           fail: res => {
             console.log(res)
           }
         })
-        
     }
+    
   },
   goForm: function(event) {
     switch (event.currentTarget.dataset.form) {

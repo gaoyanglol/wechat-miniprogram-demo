@@ -29,7 +29,6 @@ function formatTime(date) {
   var minute = date.getMinutes()
   var second = date.getSeconds()
 
-  // return year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second
   let full = [year, month, day, hour, minute, second].map(formatNumber)
   return full[0] + '-' + full[1] + '-' + full[2] + ' ' + full[3] + ':' + full[4] + ':' + full[5]
 }
