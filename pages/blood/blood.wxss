@@ -1,14 +1,15 @@
 /* pages/blood/blood.wxss */
 .container {
-  height: 100vh;
-  background: #f8f8f8;
+  min-height: 100vh;
+  background: #f4f4f4;
 }
 .tabbar {
   background: #fff;
   position: fixed;
+  z-index: 1;
   width: 100vw;
   top: 0;
-  border-bottom: 1px solid #f8f8f8
+  border-bottom: 1px solid #f4f4f4;
 }
 .content {
   overflow: hidden;
@@ -43,7 +44,7 @@
   background: #00c7d6;
   border-radius: 1px
 }
-.nav {
+.nav, .record {
   width: 688.88rpx; 
   margin: 124rpx auto;
 }
@@ -75,4 +76,53 @@
 .item-sub image {
   width: 19rpx;
   height: 19rpx;
+}
+.record {
+  flex-direction: column-reverse;
+}
+.record-item {
+  background: #fff;
+  padding:  25rpx;
+  /* height: 120rpx; */
+  border-radius: 16.9rpx;
+  margin-bottom: 24rpx;
+  position: relative;
+}
+.record-name {
+  font-size: 30rpx;
+  font-weight: 500;
+  padding-bottom: 10rpx;
+}
+.record-data {
+  font-size: 24rpx;
+  color: #8D8D8D;
+  line-height: 2;
+  padding: 15rpx 0;
+  border-top: 1px solid #f4f4f4;
+  border-bottom: 1px solid #f4f4f4;
+  margin: 5rpx 0;
+}
+.record-toggle {
+  position: absolute;
+  right: 35rpx;
+  top: 29rpx;
+  color: #00c7d6;
+  font-weight: 500;
+  font-size: 24rpx;
+}
+.record-time {
+  font-size: 21.74rpx;
+  color: #8D8D8D;
+  font-weight: 500;
+  padding-top: 10rpx;
+}
+.record-data-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.record-data-list-item {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
 }

@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="article-title">{{article.title}}</view>
+  <view class="article-info">
+    <text style="margin-right: 20rpx">{{article.time}}</text>
+    <text>{{article.writer}}</text>
+  </view>
+  <view class="article-img">
+    <image src="{{article.headphoto}}" mode="widthFix"></image>
+  </view>
+  <view class="article-content"><text decode="false" space="emsp">{{article.content}}</text></view>
+</view>

@@ -12,8 +12,8 @@
 }
 .nav-item {
   background: #fff;
-  padding: 35rpx;
-  height: 140rpx;
+  padding: 30rpx 35rpx;
+  height: 130rpx;
   border-radius: 16.9rpx;
   margin-bottom: 24rpx;
   position: relative;
@@ -34,16 +34,19 @@
   font-weight: 500;
   width: 70%;
   height: 85rpx;
+  margin-bottom: 19rpx;
   float: left;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.item-writer {
+  font-size: 21.74rpx;
+  color: #8D8D8D;
+  float: left;
+}
 .item-date {
   font-size: 21.74rpx;
   color: #8D8D8D;
-  margin-top: 9rpx;
   font-weight: 500;
-  position: absolute;
-  right: 40rpx;
-  bottom: 36rpx;
+  float: right
 }

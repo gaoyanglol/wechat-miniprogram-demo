@@ -3,8 +3,7 @@ const { formatTime } = require('../../utils/utils.js');
 
 Page({
   data: {
-    _num : 1,
-    toggle: false
+    _num : 1
   },
 
   onLoad: function(e) {
@@ -35,11 +34,13 @@ Page({
       })
     }
   },
-  recordFold: function(e) {
-  },
   recordToggle: function(e) {
+    let that = this
+    var index = e.currentTarget.dataset.index
+    var _record = this.data.record
+    _record[index].show = !_record[index].show || false
     this.setData({
-      toggle: !this.data.toggle
+      record: _record
     })
   },
   changeTab: function(event) {
@@ -61,12 +62,15 @@ Page({
         db.collection('patient_list').doc(openid).get({
           success: res => {
             let _record = res.data.record
-            for (let i = 0 ; i < _record.length; i++) {
-              _record[i].time = formatTime(_record[i].time)
+            if(res.data.type === 0) {
+              for (let i = 0 ; i < _record.length; i++) {
+                _record[i].time = formatTime(_record[i].time)
+              }
+              that.setData({
+                record: _record
+              })
             }
-            that.setData({
-              record: _record
-            })
+            
           },
           fail: res => {
             console.log(res)

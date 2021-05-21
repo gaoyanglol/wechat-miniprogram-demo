@@ -188,9 +188,14 @@ Component({
           _openid: openid,
         }).get({
            success: function(res) {
+            let _time = res.data[0].record.map((arr)=> formatTime(arr.time))
+            let record_obj = []
+            for(let i = 0; i < _time.length; i++) {
+              record_obj.push( {"time":  _time[i]} )
+            }
             that.setData({
               type: res.data[0].type,
-              record: res.data[0].record.map((arr)=> formatTime(arr.time))
+              record: record_obj
             })
 
              let today =  new Date().setHours(0,0,0,0)
@@ -199,10 +204,9 @@ Component({
              if (today === last_record.time.setHours(0,0,0,0)) {
                let index = that.data.record.length - 1
                that.setData({
-                [`record[${index}]`] : '今天'
+                [`record[${index}].time`] : '今天'
                })
              }
-             
            }
          })
       } else {

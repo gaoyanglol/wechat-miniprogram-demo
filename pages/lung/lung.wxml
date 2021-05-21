@@ -35,13 +35,14 @@
     </view>
     <view class="record" style="display: {{display? 'none' : 'flex'}}">
       <block wx:for="{{record}}">
-        <view class="record-item " id="{{index}}" catchtap="recordFold">
-          <view class="record-toggle" data-index="{{index}}" bindtap="recordToggle">{{toggle ? '收起' : '展开查看'}}</view>
+        <view class="record-item">
+          <view class="record-toggle" data-index="{{index}}" bindtap="recordToggle">{{item.show ? '收起' : '展开查看'}}</view>
           <view class="record-name"><text>肺功能检测</text></view>
-          <view class="record-data" style="display: {{toggle ? 'block' : 'none'}}">
+          <view class="record-data" wx:if="{{item.show}}">
             <view>
               <text style="font-weight: bold" >VAS疼痛视觉评分：</text>
-              <text>{{item.vas_data}}</text>
+              <text wx:if="{{item.vas_data}}">{{item.vas_data}}</text>
+              <text wx:if="{{!item.vas_data}}">未填</text>
             </view>
             <view>
               <text style="font-weight: bold">LCQ咳嗽生命质量问卷得分：</text>

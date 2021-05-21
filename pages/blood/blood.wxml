@@ -4,7 +4,7 @@
     <view class="tab"><text data-num="2" class="{{_num==2?'selected':''}}" bindtap="changeTab">历史记录</text></view>
   </view>
   <view class="content">
-    <view class="nav">
+    <view class="nav" style="display: {{display? 'block' : 'none'}}">
       <view class="nav-item" data-form="1" bindtap="goForm">
         <view class="item-name"><text>血糖水平指标</text></view>
         <view class="item-sub"><text>空腹及早、中、晚餐后2h血糖</text></view>
@@ -23,6 +23,68 @@
         </view>
         <image src="/image/meta.png" mode="heightFix"></image>
       </view>
+    </view>
+    <view class="record" style="display: {{display? 'none' : 'flex'}}">
+      <block wx:for="{{record}}">
+        <view class="record-item">
+          <view class="record-toggle" data-index="{{index}}" bindtap="recordToggle">{{item.show ? '收起' : '展开查看'}}</view>
+          <view class="record-name"><text>血糖和糖脂检测</text></view>
+          <view class="record-data" wx:if="{{item.show}}">
+
+            <view>
+              <text style="font-weight: bold">血糖水平指标：</text>
+              <view class="record-data-list" wx:if="{{item.glu_data}}">
+                <view class="record-data-list-item">
+                  <text>空腹血糖：</text>
+                  <text>{{item.glu_data.fpg}}</text>
+                </view>
+                <view class="record-data-list-item">
+                  <text>早餐后2小时：</text>
+                  <text>{{item.glu_data.breakfast}}</text>
+                </view>
+                <view class="record-data-list-item">
+                  <text>午餐后2小时：</text>
+                  <text>{{item.glu_data.lunch}}</text>
+                </view>
+                <view class="record-data-list-item">
+                  <text>晚餐后2小时：</text>
+                  <text>{{item.glu_data.dinner}}</text>
+                </view>
+              </view>
+              <text wx:if="{{!item.glu_data}}">未填</text>
+            </view>
+            
+            <view>
+              <text style="font-weight: bold">糖脂代谢指标：</text>
+              <view class="record-data-list" wx:if="{{item.gly_data}}">
+                <view class="record-data-list-item">
+                  <text>血清葡萄糖：</text>
+                  <text>{{item.gly_data.glu}}</text>
+                </view>
+                <view class="record-data-list-item">
+                  <text>总胆固醇：</text>
+                  <text>{{item.gly_data.tc}}</text>
+                </view>
+                <view class="record-data-list-item">
+                  <text>甘油三酯：</text>
+                  <text>{{item.gly_data.tg}}</text>
+                </view>
+                <view class="record-data-list-item">
+                  <text>高脂蛋白胆固醇：</text>
+                  <text>{{item.gly_data.hdlc}}</text>
+                </view>
+                <view class="record-data-list-item">
+                  <text>低脂蛋白胆固醇：</text>
+                  <text>{{item.gly_data.ldlc}}</text>
+                </view>
+              </view>
+              <text wx:if="{{!item.gly_data}}">未填</text>
+            </view>
+            
+          </view>
+          <view class="record-time">{{item.time}}</view>
+        </view>
+      </block>
     </view>
   </view>
 </view>

@@ -1,10 +1,9 @@
 {
   "pages": [
+    "pages/knowledge/knowledge",
 
     "pages/home/home",
-    "pages/lung/lung",
-    
-    "pages/knowledge/knowledge",
+    "pages/knowledge/article/article",
     "pages/communicate/communicate",
     "pages/blood/blood",
     "pages/bloodVas/bloodVas",
@@ -12,6 +11,7 @@
     "pages/bloodLcq/lcqResult/lcqResult",
     "pages/bloodEortc/bloodEortc",
     "pages/bloodEortc/eortcResult/eortcResult",
+    "pages/lung/lung",
     "pages/lungFpg/lungFpg",
     "pages/lungMeta/lungMeta",
     "pages/me/me",
