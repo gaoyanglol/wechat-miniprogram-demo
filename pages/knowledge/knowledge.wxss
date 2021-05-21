@@ -41,6 +41,7 @@
 }
 .item-writer {
   font-size: 21.74rpx;
+  font-weight: 500;
   color: #8D8D8D;
   float: left;
 }

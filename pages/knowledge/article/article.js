@@ -7,15 +7,17 @@ Page({
   },
 
   onLoad: function (options) {
+    let that = this
     let _id = options.id
     db.collection('article_content').where({
       id: _id
     }).get({
       success: res => {
-        res.data[0].content.raplace('\\n','\n')
-        
-        console.log(res.data[0].content.raplace('\\n','\n'))
-        
+        let _res = res.data[0].content.replace(/\\n/g, '\n')
+        that.setData({
+          article: res.data[0],
+          content: _res
+        })
       }
     })
   }

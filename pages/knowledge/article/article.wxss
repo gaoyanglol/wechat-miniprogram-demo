@@ -1,5 +1,5 @@
 .container {
-  padding: 35rpx 35rpx 80rpx;
+  padding: 45rpx 45rpx 80rpx;
 }
 .article-title {
   font-size: 36.23rpx;
@@ -12,12 +12,12 @@
   margin: 20rpx 0;
 }
 .article-img {
-  margin: 20rpx 0;
+  margin: 40rpx 0 40rpx;
 }
 .article-img image {
   width: 100%;
 }
 .article-content {
-  line-height: 1.5;
+  line-height: 2;
   font-size: 32rpx;
 }

@@ -1,10 +1,9 @@
 {
   "pages": [
-    "pages/knowledge/knowledge",
-
     "pages/home/home",
     "pages/knowledge/article/article",
     "pages/communicate/communicate",
+    "pages/knowledge/knowledge",
     "pages/blood/blood",
     "pages/bloodVas/bloodVas",
     "pages/bloodLcq/bloodLcq",
