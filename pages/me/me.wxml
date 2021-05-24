@@ -33,18 +33,23 @@
       </view>
     </view>
 
-    <view class="functions">
-      <view class="func-list">
-        <text>我的医生</text>
-      </view>
-      <view class="func-list">
-        <text>我的订单</text>
+    <view wx:if="{{}}" class="functions">
+      <view class="func-list" bindtap="lungData">
+        <text>随访数据</text>
       </view>
     </view>
     <view class="functions">
       <view class="func-list">
-        <text>地址管理</text>
+        <text>个人档案</text>
       </view>
+      <view class="func-list">
+        <text>病历记录</text>
+      </view>
+      <view class="func-list">
+        <text>就诊记录</text>
+      </view>
+    </view>
+    <view class="functions">
       <view class="func-list">
         <text>联系我们</text>
       </view>
