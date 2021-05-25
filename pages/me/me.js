@@ -45,24 +45,37 @@ Component({
     that.setStyle();
   },
   data: {
-    isLogin: ""
+    isLogin: "",
   },
   methods: {
     onShow: function() {
-      let isLogin = wx.getStorageSync('openid')
+      let _openid = wx.getStorageSync('openid')
 
-      if (isLogin) {
+      if (_openid) {
         this.setData({
-          isLogin: 1
+          isLogin: 1,
+          openid: _openid
         })
+        if (_openid === 'olx8h5Cwc-aY6PXUJ5p6tI_Eapw8') {
+          this.setData({
+            isDoc: true
+          })
+        }
       } else {
         this.setData({
           isLogin: 0
         })
       }
     },
-    onLoad: function() {
-    
+    lungData: function() {
+      wx.navigateTo({
+        url: '../me/lungData/lungData',
+      })
+    },
+    bloodData: function() {
+      wx.navigateTo({
+        url: '../me/bloodData/bloodData',
+      })
     },
     // 登录功能
     login: function() {

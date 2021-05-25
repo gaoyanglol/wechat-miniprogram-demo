@@ -33,8 +33,11 @@
       </view>
     </view>
 
-    <view wx:if="{{}}" class="functions">
-      <view class="func-list" bindtap="lungData">
+    <view wx:if="{{isDoc}}" class="functions">
+      <view wx:if="{{openid === 'olx8h5Cwc-aY6PXUJ5p6tI_Eapw7'}}" class="func-list" bindtap="lungData">
+        <text>随访数据</text>
+      </view>
+      <view wx:elif="{{openid === 'olx8h5Cwc-aY6PXUJ5p6tI_Eapw8'}}" class="func-list" bindtap="bloodData">
         <text>随访数据</text>
       </view>
     </view>

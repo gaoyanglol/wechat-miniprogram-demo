@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="content">
+    <view class="patient-list hide-left">
+      <block wx:for="{{record}}">
+      <view class="patient-item">
+        <view class="patient-name"><text>{{item.name}}</text></view>
+        <view class="patient-age"><text>{{item.age}} 岁</text></view>
+        <view class="patient-gender">
+          <text wx:if="{{item.gender === 1}}">男</text>
+          <text wx:if="{{item.gender === 2}}">女</text>
+        </view>
+      </view>
+      </block>
+    </view>
+    <view class="patient-detail">
+      
+    </view>
+  </view>
+</view>

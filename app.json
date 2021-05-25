@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/me/me",
+
     "pages/home/home",
     "pages/knowledge/article/article",
     "pages/communicate/communicate",
@@ -13,8 +15,9 @@
     "pages/lung/lung",
     "pages/lungFpg/lungFpg",
     "pages/lungMeta/lungMeta",
-    "pages/me/me",
-    "pages/me/register/register"
+    "pages/me/register/register",
+    "pages/me/lungData/lungData",
+    "pages/me/bloodData/bloodData"
   ],
   "window": {
     "navigationStyle": "default"
