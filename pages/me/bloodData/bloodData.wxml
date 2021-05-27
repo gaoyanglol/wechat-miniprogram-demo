@@ -1,18 +1,80 @@
 <view class="container">
-  <view class="content">
-    <view class="patient-list hide-left">
+  <view class="content {{hide_left? 'hide-left':''}}">
+    <view class="patient-list">
       <block wx:for="{{record}}">
-      <view class="patient-item">
+      <view class="patient-item" data-index="{{index}}" bindtap="goDetail">
         <view class="patient-name"><text>{{item.name}}</text></view>
         <view class="patient-age"><text>{{item.age}} 岁</text></view>
         <view class="patient-gender">
           <text wx:if="{{item.gender === 1}}">男</text>
           <text wx:if="{{item.gender === 2}}">女</text>
-        </view>
+        </view>                          
       </view>
       </block>
     </view>
     <view class="patient-detail">
+    <view class="detail-item" wx:for="{{record}}" id="{{item._id}}" data-index ="{{index}}" wx:if="{{item.detail}}" catchtap="catchToggle">
+    
+    <block wx:for="{{item.record}}">
+      <view class="detail-record">
+        <view class="detail-toggle" data-index="{{index}}" bindtap="detailToggle">展开查看</view>
+        <view class="detail-name"><text>血糖和糖脂检测</text></view>
+        <view class="detail-data" wx:if="{{item.show}}">
+          <view>
+            <text style="font-weight: bold">血糖水平指标：</text>
+            <view class="detail-data-list" wx:if="{{item.glu_data}}">
+              <view class="detail-data-list-item">
+                <text>空腹血糖：</text>
+                <text>{{item.glu_data.fpg}}</text>
+              </view>
+              <view class="detail-data-list-item">
+                <text>早餐后2小时：</text>
+                <text>{{item.glu_data.breakfast}}</text>
+              </view>
+              <view class="detail-data-list-item">
+                <text>午餐后2小时：</text>
+                <text>{{item.glu_data.lunch}}</text>
+              </view>
+              <view class="detail-data-list-item">
+                <text>晚餐后2小时：</text>
+                <text>{{item.glu_data.dinner}}</text>
+              </view>
+            </view>
+            <text wx:if="{{!item.glu_data}}">未填</text>
+          </view>
+
+          <view>
+            <text style="font-weight: bold">糖脂代谢指标：</text>
+            <view class="detail-data-list" wx:if="{{item.gly_data}}">
+              <view class="detail-data-list-item">
+                <text>血清葡萄糖：</text>
+                <text>{{item.gly_data.glu}}</text>
+              </view>
+              <view class="detail-data-list-item">
+                <text>总胆固醇：</text>
+                <text>{{item.gly_data.tc}}</text>
+              </view>
+              <view class="detail-data-list-item">
+                <text>甘油三酯：</text>
+                <text>{{item.gly_data.tg}}</text>
+              </view>
+              <view class="detail-data-list-item">
+                <text>高脂蛋白胆固醇：</text>
+                <text>{{item.gly_data.hdlc}}</text>
+              </view>
+              <view class="detail-data-list-item">
+                <text>低脂蛋白胆固醇：</text>
+                <text>{{item.gly_data.ldlc}}</text>
+              </view>
+            </view>
+            <text wx:if="{{!item.gly_data}}">未填</text>
+          </view>
+        </view>
+        <view class="detail-time">{{item.time}}</view>
+      </view>
+    </block>
+    <view class="patient-link" bindtap="goList"><text decode="true">&lt; {{item.name}}</text></view>
+    </view>
       
     </view>
   </view>

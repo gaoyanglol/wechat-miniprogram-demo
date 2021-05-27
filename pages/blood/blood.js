@@ -35,9 +35,8 @@ Page({
     }
   },
   recordToggle: function(e) {
-    let that = this
-    var index = e.currentTarget.dataset.index
-    var _record = this.data.record
+    let index = e.currentTarget.dataset.index
+    let _record = this.data.record
     _record[index].show = !_record[index].show || false
     this.setData({
       record: _record
