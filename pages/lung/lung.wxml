@@ -65,7 +65,6 @@
                 </view>
               </view>
               <text wx:if="{{!item.lcq_data}}">未填</text>
-
             </view>
             <view>
               <text style="font-weight: bold">EORTC生活质量调查问卷得分：</text>

@@ -50,15 +50,18 @@ Component({
   methods: {
     onShow: function() {
       let _openid = wx.getStorageSync('openid')
-
       if (_openid) {
         this.setData({
           isLogin: 1,
           openid: _openid
         })
-        if (_openid === 'olx8h5Cwc-aY6PXUJ5p6tI_Eapw8') {
+        if (_openid === 'olx8h5DhyOfOLvvt8KqmexPgokVk' || _openid === 'olx8h5KKDp0djr9Su4xm42QbxfDw') {
           this.setData({
             isDoc: true
+          })
+        } else {
+          this.setData({
+            isDoc: false
           })
         }
       } else {

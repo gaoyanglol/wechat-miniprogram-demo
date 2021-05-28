@@ -1,2 +1,139 @@
-<!--pages/me/lungData/lungData.wxml-->
-<text>pages/me/lungData/lungData.wxml</text>
+<view class="container">
+  <view class="content {{hide_left? 'hide-left':''}}">
+    <view class="patient-list">
+      <block wx:for="{{record}}">
+      <view class="patient-item" data-index="{{index}}" bindtap="goDetail">
+        <view class="patient-name"><text>{{item.name}}</text></view>
+        <view class="patient-age"><text>{{item.age}} 岁</text></view>
+        <view class="patient-gender">
+          <text wx:if="{{item.gender === 1}}">男</text>
+          <text wx:if="{{item.gender === 2}}">女</text>
+        </view>                          
+      </view>
+      </block>
+    </view>
+    <view class="patient-detail">
+    <view class="detail-item" wx:for="{{record}}" id="{{item._id}}" data-index ="{{index}}" wx:if="{{item.detail}}" catchtap="catchToggle">
+    
+    <block wx:for="{{item.record}}">
+      <view class="detail-record">
+        <view class="detail-toggle" data-index="{{index}}" bindtap="detailToggle">{{item.show ? '收起' : '展开查看'}}</view>
+        <view class="detail-name"><text>肺功能检测</text></view>
+        <view class="detail-data" wx:if="{{item.show}}">
+          <view>
+            <text style="font-weight: bold">VAS疼痛视觉评分：</text>
+            <text class="detail-data-list" wx:if="{{item.vas_data}}">{{item.vas_data}}</text>
+            <text wx:if="{{!item.vas_data}}">未填</text>
+          </view>
+
+          <view>
+            <text style="font-weight: bold">LCQ咳嗽生命质量问卷得分：</text>
+            <view class="detail-data-list" wx:if="{{item.lcq_data}}">
+              <view class="detail-data-list-item">
+                <text>生理领域得分：</text>
+                <text>{{item.lcq_data.score[0]}}</text>
+              </view>
+              <view class="detail-data-list-item">
+                <text>心理领域得分</text>
+                <text>{{item.lcq_data.score[1]}}</text>
+              </view>
+              <view class="detail-data-list-item">
+                <text>社会领域得分:</text>
+                <text>{{item.lcq_data.score[2]}}</text>
+              </view>
+              <view class="detail-data-list-item">
+                <text>总得分:</text>
+                <text>{{item.lcq_data.score[3]}}</text>
+              </view>
+              <view class="detail-data-list-item">
+                <text>总得分:</text>
+                <text>{{item.lcq_data.score[3]}}</text>
+              </view>
+              <view>
+                <text>选项：</text>
+                <text>{{item.lcq_data.answer}}</text>
+              </view>
+            </view>
+            <text wx:if="{{!item.lcq_data}}">未填</text>
+          </view>
+          <view>
+              <text style="font-weight: bold">EORTC生活质量调查问卷得分：</text>
+              <view class="detail-data-list" wx:if="{{item.eortc_data}}">
+                <view class="detail-data-list-item">
+                  <text>躯体功能：</text>
+                  <text>{{item.eortc_data.score[0]}}</text>
+                </view>
+                <view class="detail-data-list-item">
+                  <text>角色功能：</text>
+                  <text>{{item.eortc_data.score[1]}}</text>
+                </view>
+                <view class="detail-data-list-item">
+                  <text>情绪功能：</text>
+                  <text>{{item.eortc_data.score[2]}}</text>
+                </view>
+                <view class="detail-data-list-item">
+                  <text>认知功能：</text>
+                  <text>{{item.eortc_data.score[3]}}</text>
+                </view>
+                <view class="detail-data-list-item">
+                  <text>社会功能：</text>
+                  <text>{{item.eortc_data.score[4]}}</text>
+                </view>
+                <view class="detail-data-list-item">
+                  <text>总健康状况：</text>
+                  <text>{{item.eortc_data.score[5]}}</text>
+                </view>
+                <view class="detail-data-list-item">
+                  <text>疲倦：</text>
+                  <text>{{item.eortc_data.score[6]}}</text>
+                </view>
+                <view class="detail-data-list-item">
+                  <text>恶心与呕吐：</text>
+                  <text>{{item.eortc_data.score[7]}}</text>
+                </view>
+                <view class="detail-data-list-item">
+                  <text>疼痛：</text>
+                  <text>{{item.eortc_data.score[8]}}</text>
+                </view>
+                <view class="detail-data-list-item">
+                  <text>气促：</text>
+                  <text>{{item.eortc_data.score[9]}}</text>
+                </view>
+                <view class="detail-data-list-item">
+                  <text>失眠：</text>
+                  <text>{{item.eortc_data.score[10]}}</text>
+                </view>
+                <view class="detail-data-list-item">
+                  <text>食欲丧失：</text>
+                  <text>{{item.eortc_data.score[11]}}</text>
+                </view>
+                <view class="detail-data-list-item">
+                  <text>便秘：</text>
+                  <text>{{item.eortc_data.score[12]}}</text>
+                </view>
+                <view class="detail-data-list-item">
+                  <text>腹泻：</text>
+                  <text>{{item.eortc_data.score[13]}}</text>
+                </view>
+                <view class="detail-data-list-item">
+                  <text>经济困难：</text>
+                  <text>{{item.eortc_data.score[14]}}</text>
+                </view>
+                <view>
+                  <text>选项：</text>
+                  <text>{{item.eortc_data.answer}}</text>
+                </view>
+              </view>
+              <text wx:if="{{!item.eortc_data}}">未填</text>
+            </view>
+
+        </view>
+        <view class="detail-time">{{item.time}}</view>
+      </view>
+    </block>
+    <view class="patient-link" bindtap="goList"><text decode="true">&lt; {{item.name}}</text></view>
+    </view>
+      
+    </view>
+  </view>
+</view>

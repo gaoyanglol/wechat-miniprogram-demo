@@ -17,7 +17,7 @@
     
     <block wx:for="{{item.record}}">
       <view class="detail-record">
-        <view class="detail-toggle" data-index="{{index}}" bindtap="detailToggle">展开查看</view>
+        <view class="detail-toggle" data-index="{{index}}" bindtap="detailToggle">{{item.show ? '收起' : '展开查看'}}</view>
         <view class="detail-name"><text>血糖和糖脂检测</text></view>
         <view class="detail-data" wx:if="{{item.show}}">
           <view>
