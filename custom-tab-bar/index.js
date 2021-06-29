@@ -8,12 +8,14 @@ Component({
       iconPath: "/image/data.png",
       selectedIconPath: "/image/data_HL.png",
       text: "数据监测"
-    }, {
-      pagePath: "/pages/knowledge/knowledge",
-      iconPath: "/image/knowledge.png",
-      selectedIconPath: "/image/knowledge_HL.png",
-      text: "疾病知识"
-    }, {
+    }, 
+    // {
+    //   pagePath: "/pages/knowledge/knowledge",
+    //   iconPath: "/image/knowledge.png",
+    //   selectedIconPath: "/image/knowledge_HL.png",
+    //   text: "健康知识"
+    // },  
+    {
       pagePath: "/pages/communicate/communicate",
       iconPath: "/image/communicate.png",
       selectedIconPath: "/image/communicate_HL.png",

@@ -14,7 +14,7 @@
     <view class="nav-item" data-form="1" bindtap="">
         <view class="item-name">
           <text>郑亮</text>
-          <text class="position">主任医生</text>
+          <text class="position">副主任医师</text>
         </view>
         <view class="item-sub">
           <text space="nbsp">常州市第一人民医院 | 胸外科</text>
